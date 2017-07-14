@@ -1,6 +1,6 @@
 # Output directory containing the formatted manuscript
 
-The [`gh-pages`](https://github.com/greenelab/manubot-rootstock/tree/gh-pages) branch hosts the contents of this directory at https://greenelab.github.io/manubot-rootstock/.
+The [`gh-pages`](https://github.com/slochower/nonequilibrium-barrier/tree/gh-pages) branch hosts the contents of this directory at https://slochower.github.io/nonequilibrium-barrier/.
 
 ## Files
 
@@ -15,4 +15,4 @@ This directory contains the following files, which are mostly ignored on the `ma
 ## Source
 
 The manuscripts in this directory were built from
-[`84d9d9255effad88b51a80fed80118d81b9d1964`](https://github.com/greenelab/manubot-rootstock/commit/84d9d9255effad88b51a80fed80118d81b9d1964).
+[`c1fe5b4a129c9c3d68b81208afe242c83e40d995`](https://github.com/slochower/nonequilibrium-barrier/commit/c1fe5b4a129c9c3d68b81208afe242c83e40d995).
