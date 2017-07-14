@@ -25,3 +25,13 @@ position of the barrier.
 
 3. Optimization of a surface for flux and force with and without a barrier.
 [@SdO7fVnR]
+
+### Ideas
+
+1. MD and umbrella sampling of a Feringa-type motor.
+
+2. pH change can be modeled as a change in substrate concentration, for our purposes.
+
+3. Can the experimental groups synthesize motors based on an energy surface?
+
+4. CD can be a platform -- a scaffold -- for building, but it will be hard to figure out the appropriate assays.
