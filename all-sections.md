@@ -1,25 +1,27 @@
-# Manubot Rootstock: Manuscript Title
+# Manubot Rootstock: Molecular motors with barriers
 
 ## Authors
 
 
-+ **Daniel S. Himmelstein**<br>
-  [\@dhimmel](https://github.com/dhimmel) ·
-  [0000-0002-3012-7446](https://orcid.org/0000-0002-3012-7446) ·
-  Department of Systems Pharmacology and Translational Therapeutics, University of Pennsylvania ·
-  Funded by GBMF4552
-
-+ **Anthony Gitter**<br>
-  [\@agitter](https://github.com/agitter) ·
-  [0000-0002-5324-9833](https://orcid.org/0000-0002-5324-9833) ·
-  Department of Biostatistics and Medical Informatics, University of Wisconsin-Madison and Morgridge Institute for Research ·
-  Funded by NIH U54AI117924
++ **David R. Slochower**<br>
+  [\@slochower](https://github.com/slochower) ·
+  [0000-0003-3928-5050](https://orcid.org/0000-0003-3928-5050) ·
+  Skaggs School of Pharmacy and Pharmaceutical Sciences, University of California, San Diego ·
+  Funded by nan
 
 
 
 
 ## Abstract
 
-Offspring of the [Deep Review](https://github.com/greenelab/deep-review).
-We cite the Deep Review like [@tJKvnIaZ] or [@tJKvnIaZ].
-The source repository is [@1B7Y2HVtw].
+TBD
+
+## Outline
+
+1. Surface with and without a barrier
+
+2. Family of curves showing force on the barrier as a function of height and
+position of the barrier.
+
+3. Optimization of a surface for flux and force with and without a barrier.
+[@SdO7fVnR]
