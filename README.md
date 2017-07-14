@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 # nonequilibrium-barrier
-=======
-# Continuous manuscripts written collaboratively on GitHub
->>>>>>> 047ac5e306057716d41a9dcf0da40c6f2037db9c
 
 [Manubot Rootstock](https://git.io/vQSvo) provides a system for collaboratively writing scholarly manuscripts via GitHub.
 This project aims to automate publishing.
