@@ -3,12 +3,22 @@
 ## Authors
 
 
-+ **David R. Slochower**<br>
-  [\@slochower](https://github.com/slochower) ·
-  [0000-0003-3928-5050](https://orcid.org/0000-0003-3928-5050) ·
-  Skaggs School of Pharmacy and Pharmaceutical Sciences, University of California, San Diego ·
-  Funded by nan
++ **Daniel S. Himmelstein**<br>
+  [0000-0002-3012-7446](https://orcid.org/0000-0002-3012-7446)
+     · [\@dhimmel](https://github.com/dhimmel)
+     · Department of Systems Pharmacology and Translational Therapeutics, University of Pennsylvania
+     · Funded by GBMF4552
 
++ **Anthony Gitter**<br>
+  [0000-0002-5324-9833](https://orcid.org/0000-0002-5324-9833)
+     · [\@agitter](https://github.com/agitter)
+     · Department of Biostatistics and Medical Informatics, University of Wisconsin-Madison and Morgridge Institute for Research
+     · Funded by NIH U54AI117924
+
++ **Venkat S. Malladi**<br>
+  [0000-0002-0144-0564](https://orcid.org/0000-0002-0144-0564)
+     · [\@vsmalladi](https://github.com/vsmalladi)
+     · The Laboratory of Signaling and Gene Expression, Cecil H. and Ida Green Center for Reproductive Biology Sciences, University of Texas Southwestern Medical Center
 
 
 
