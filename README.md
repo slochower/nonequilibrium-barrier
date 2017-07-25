@@ -29,7 +29,9 @@ When a pull request is merged, Travis CI performs the build and writes the resul
 The `gh-pages` branch hosts the following URLs:
 
 + **HTML manuscript** at https://slochower.github.io/nonequilibrium-barrier/<br>
+  short URL: TBD
 + **PDF manuscript** at https://slochower.github.io/nonequilibrium-barrier/manuscript.pdf<br>
+  short URL: TBD
 
 For continuous integration configuration details, see [`.travis.yml`](.travis.yml).
 
