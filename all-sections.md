@@ -1,24 +1,35 @@
+---
+author:
+- David R. Slochower
+keywords:
+- work-in-progress
+- markdown
+- manuscript
+- publishing
+title: 'Manubot Rootstock: nonequilibrium-barrier'
+...
+
+
+<small><em>
+This manuscript was automatically generated from [slochower/nonequilibrium-barrier@5e8490a](https://github.com/slochower/nonequilibrium-barrier/tree/5e8490a15e9f4170984693928aabad683c83001c).
+</em></small>
+
+
 # Manubot Rootstock: Molecular motors with barriers
 
 ## Authors
 
 
-+ **Daniel S. Himmelstein**<br>
-  [0000-0002-3012-7446](https://orcid.org/0000-0002-3012-7446)
-     · [\@dhimmel](https://github.com/dhimmel)
-     · Department of Systems Pharmacology and Translational Therapeutics, University of Pennsylvania
-     · Funded by GBMF4552
-
-+ **Anthony Gitter**<br>
-  [0000-0002-5324-9833](https://orcid.org/0000-0002-5324-9833)
-     · [\@agitter](https://github.com/agitter)
-     · Department of Biostatistics and Medical Informatics, University of Wisconsin-Madison and Morgridge Institute for Research
-     · Funded by NIH U54AI117924
-
-+ **Venkat S. Malladi**<br>
-  [0000-0002-0144-0564](https://orcid.org/0000-0002-0144-0564)
-     · [\@vsmalladi](https://github.com/vsmalladi)
-     · The Laboratory of Signaling and Gene Expression, Cecil H. and Ida Green Center for Reproductive Biology Sciences, University of Texas Southwestern Medical Center
++ **David R. Slochower**<br>
+    ![ORCID icon](images/orcid.svg){height="13px"}
+    [0000-0003-3928-5050](https://orcid.org/0000-0003-3928-5050)
+    · ![GitHub icon](images/github.svg){height="13px"}
+    [slochower](https://github.com/slochower)
+    · ![Twitter icon](images/twitter.svg){height="13px"}
+    [drslochower](https://twitter.com/drslochower)<br>
+  <small>
+     Skaggs School of Pharmacy and Pharmaceutical Sciences, University of California, San Diego
+  </small>
 
 
 
