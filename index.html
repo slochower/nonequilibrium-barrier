@@ -18,7 +18,7 @@
 <div id="header">
 <h1 class="title">Manubot Rootstock: nonequilibrium-barrier</h1>
 </div>
-<p><small><em> This manuscript was automatically generated from <a href="https://github.com/slochower/nonequilibrium-barrier/tree/5e8490a15e9f4170984693928aabad683c83001c">slochower/nonequilibrium-barrier@5e8490a</a>. </em></small></p>
+<p><small><em> This manuscript was automatically generated from <a href="https://github.com/slochower/nonequilibrium-barrier/tree/27c541eaa543c3491b3cbe0cfa9078d670126796">slochower/nonequilibrium-barrier@27c541e</a>. </em></small></p>
 <h1 id="manubot-rootstock-molecular-motors-with-barriers">Manubot Rootstock: Molecular motors with barriers</h1>
 <h2 id="authors">Authors</h2>
 <ul>
@@ -39,6 +39,13 @@
 <li><p>Can the experimental groups synthesize motors based on an energy surface?</p></li>
 <li><p>CD can be a platform -- a scaffold -- for building, but it will be hard to figure out the appropriate assays.</p></li>
 </ol>
+<h2 id="optimization-of-a-surface-for-maximum-probability-flux">Optimization of a surface for maximum probability flux</h2>
+<p>It would be nice to be able to design -- or suggest -- how to design a molecular motor for specific properties (speed, force, torque, gearing, ability to work against a load, resistance to being forced backwards, or something else).</p>
+<h3 id="two-surfaces-starting-with">Two surfaces, starting with</h3>
+<p>Starting with a fixed bound surface <img src="https://github.com/slochower/nonequilibrium-master/blob/bcac92c96f496a888dc02249e40d049032225205/notebooks/surface-optimization/fixed-bound-surfaces.svg" id="fig:fixed-bound-surfaces" /></p>
+<p>There is something I still don't understand about this. The resutls do not seem to be completely reproducable even with setting <code>np.random.seed(42)</code>. I have consistently gotten between 1300 and 1400 iterations, but not always the same number.</p>
+<h3 id="two-surfaces-both-optimized">Two surfaces, both optimized (?)</h3>
+<h2 id="optimization-of-a-surface-for-maximum-force" class="unnumbered">Optimization of a surface for maximum force</h2>
 <div id="refs" class="references">
 <div id="ref-SdO7fVnR">
 <p>1. Slochower DR, Wang Y-H, Tourdot RW, Radhakrishnan R, Janmey PA. 2014 Counterion-mediated pattern formation in membranes containing anionic lipids. <em>Advances in Colloid and Interface Science</em> <strong>208</strong>, 177–188. See <a href="https://doi.org/10.1016/j.cis.2014.01.016" class="uri">https://doi.org/10.1016/j.cis.2014.01.016</a>.</p>
