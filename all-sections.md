@@ -11,7 +11,7 @@ title: 'Manubot Rootstock: nonequilibrium-barrier'
 
 
 <small><em>
-This manuscript was automatically generated from [slochower/nonequilibrium-barrier@5e8490a](https://github.com/slochower/nonequilibrium-barrier/tree/5e8490a15e9f4170984693928aabad683c83001c).
+This manuscript was automatically generated from [slochower/nonequilibrium-barrier@27c541e](https://github.com/slochower/nonequilibrium-barrier/tree/27c541eaa543c3491b3cbe0cfa9078d670126796).
 </em></small>
 
 
@@ -56,3 +56,18 @@ position of the barrier.
 3. Can the experimental groups synthesize motors based on an energy surface?
 
 4. CD can be a platform -- a scaffold -- for building, but it will be hard to figure out the appropriate assays.
+
+## Optimization of a surface for maximum probability flux
+
+It would be nice to be able to design -- or suggest -- how to design a molecular motor for specific properties (speed, force, torque, gearing, ability to work against a load, resistance to being forced backwards, or something else).
+
+### Two surfaces, starting with
+
+Starting with a fixed bound surface
+![](https://github.com/slochower/nonequilibrium-master/blob/bcac92c96f496a888dc02249e40d049032225205/notebooks/surface-optimization/fixed-bound-surfaces.svg){#fig:fixed-bound-surfaces}
+
+There is something I still don't understand about this. The resutls do not seem to be completely reproducable even with setting `np.random.seed(42)`. I have consistently gotten between 1300 and 1400 iterations, but not always the same number.
+
+### Two surfaces, both optimized (?)
+
+## Optimization of a surface for maximum force
