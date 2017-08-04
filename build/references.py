@@ -5,6 +5,7 @@ Process citations and retrieve citation metadata
 """
 
 import collections
+import datetime
 import json
 import os
 import pathlib
@@ -157,9 +158,14 @@ path = pathlib.Path('../content/metadata.yaml')
 with path.open() as read_file:
     metadata = yaml.load(read_file)
 
+# Add date to metadata
+today = datetime.date.today()
+metadata['date-meta'] = today.isoformat()
+stats['date'] = today.strftime('%B %e, %Y')
+
 # Author table information
 authors = metadata.pop('author_info')
-metadata['author'] = [author['name'] for author in authors]
+metadata['author-meta'] = [author['name'] for author in authors]
 stats['authors'] = authors
 
 # Set repository version metadata for CI builds only
@@ -170,10 +176,6 @@ if repo_slug and commit:
         'repo_slug': repo_slug,
         'commit': commit,
     }
-
-# Write stats to JSON
-with gen_dir.joinpath('stats.json').open('wt') as write_file:
-    json.dump(stats, write_file, indent=2)
 
 # Convert to citation_id citations for pandoc
 converted_text = text
@@ -191,6 +193,14 @@ jinja_environment = jinja2.Environment(
 )
 template = jinja_environment.from_string(converted_text)
 converted_text = template.render(**stats)
+
+# Get word count
+stats['word_count'] = len(converted_text.split())
+print(f'Word count: {stats["word_count"]}')
+
+# Write stats to JSON
+with gen_dir.joinpath('stats.json').open('wt') as write_file:
+    json.dump(stats, write_file, indent=2)
 
 # Write manuscript for pandoc
 all_sections_path = gen_dir.joinpath('all-sections.md')

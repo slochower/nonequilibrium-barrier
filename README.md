@@ -2,8 +2,8 @@
 
 [Manubot Rootstock](https://git.io/vQSvo) provides a system for collaboratively writing scholarly manuscripts via GitHub.
 This project aims to automate publishing.
-For example, citation and referencing are largely automated. 
-This project originated with the [Deep Review](https://github.com/slochower/deep-review), but was moved here in hopes of making a general purpose template for the system.
+For example, citation and referencing are largely automated.
+This project originated with the [Deep Review](https://github.com/greenelab/deep-review), but was moved here in hopes of making a general purpose template for the system.
 
 A rootstock (or rhizome) is "a plant onto which another variety is grafted".
 This repository plays the role of a botanical trunk.
@@ -12,10 +12,13 @@ Fork it and a manuscript will grow.
 The most current version of the `master` branch is built by continuous integration and [available via gh-pages](https://slochower.github.io/nonequilibrium-barrier/).
 To see what's incoming, check the [open pull requests](https://github.com/slochower/nonequilibrium-barrier/pulls).
 
+Instructions for using Manubot Rootstock for your own manuscript are still evolving.
+The recommended approach is to clone this repository, as detailed [here](https://github.com/greenelab/manubot-rootstock/issues/6#issuecomment-314541837).
+
 ## Source
 
 The manuscript source is located in [`content`](content).
-Text should be written in markdown files, with a digit prefix for ordering (e.g. `01.` or `02.`) and a `.md` suffix.
+Text should be written in markdown files, with a digit prefix for ordering (e.g. `01.`, `02.`, etc.) and a `.md` suffix.
 
 ## Continuous Integration
 
@@ -44,7 +47,7 @@ This entirety of this repository is licensed under a CC BY 4.0 License ([`LICENS
 Please attribute by linking to https://github.com/slochower/nonequilibrium-barrier.
 
 Since CC BY is not ideal for code and data, certain repository components are also released under the CC0 1.0 public domain dedication ([`LICENSE-CC0.md`](LICENSE-CC0.md)).
-All files matched by the following blog patterns are dual licensed under CC BY 4.0 and CC0 1.0:
+All files matched by the following glob patterns are dual licensed under CC BY 4.0 and CC0 1.0:
 
 + `*.sh`
 + `*.py`
