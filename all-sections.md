@@ -1,6 +1,7 @@
 ---
-author:
+author-meta:
 - David R. Slochower
+date-meta: '2017-08-04'
 keywords:
 - work-in-progress
 - markdown
@@ -9,13 +10,11 @@ keywords:
 title: 'Manubot Rootstock: nonequilibrium-barrier'
 ...
 
-
 <small><em>
-This manuscript was automatically generated from [slochower/nonequilibrium-barrier@27c541e](https://github.com/slochower/nonequilibrium-barrier/tree/27c541eaa543c3491b3cbe0cfa9078d670126796).
+This manuscript was automatically generated
+from [slochower/nonequilibrium-barrier@2f5a20f](https://github.com/slochower/nonequilibrium-barrier/tree/2f5a20f069696b242f8633ec1d76aa47fd97987e)
+on August  4, 2017.
 </em></small>
-
-
-# Manubot Rootstock: Molecular motors with barriers
 
 ## Authors
 
@@ -32,7 +31,6 @@ This manuscript was automatically generated from [slochower/nonequilibrium-barri
   </small>
 
 
-
 ## Abstract
 
 TBD
@@ -45,7 +43,6 @@ TBD
 position of the barrier.
 
 3. Optimization of a surface for flux and force with and without a barrier.
-[@SdO7fVnR]
 
 ### Ideas
 
@@ -59,12 +56,16 @@ position of the barrier.
 
 ## Optimization of a surface for maximum probability flux
 
-It would be nice to be able to design -- or suggest -- how to design a molecular motor for specific properties (speed, force, torque, gearing, ability to work against a load, resistance to being forced backwards, or something else).
+It would be nice to be able to design -- or suggest -- how to design a molecular motor for specific properties (speed, force, torque, gearing, ability to work against a load, resistance to being forced backwards, or something else). To that end, we set out to explore the relationship between the shape of the potential energy surfaces and these properties. [@mNNsAL8U]
 
-### Two surfaces, starting with
+### Optimization of a single surface
 
-Starting with a fixed bound surface
-![](https://github.com/slochower/nonequilibrium-master/blob/bcac92c96f496a888dc02249e40d049032225205/notebooks/surface-optimization/fixed-bound-surfaces.svg){#fig:fixed-bound-surfaces}
+![The fixed bound potential energy surface during optimization.](https://cdn.rawgit.com/slochower/nonequilibrium-master/bcac92c96f496a888dc02249e40d049032225205/notebooks/surface-optimization/fixed-bound-surfaces.svg){#fig:bound width=10cm}
+
+
+To start, let's begin with a fixed bound energy surface created by smoothing a sawtooth with six spline points @fig:bound.
+
+This shows the results of [Nelder-Mead optimization](https://en.wikipedia.org/wiki/Nelder%E2%80%93Mead_method), also known as downhill simplex, which should be completely reproducible and deterministic.
 
 There is something I still don't understand about this. The resutls do not seem to be completely reproducable even with setting `np.random.seed(42)`. I have consistently gotten between 1300 and 1400 iterations, but not always the same number.
 

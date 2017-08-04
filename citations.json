@@ -523,5 +523,140 @@
       "id": "SdO7fVnR"
     },
     "citation_id": "SdO7fVnR"
+  },
+  "doi:10.1126/science.1127344": {
+    "source": "doi",
+    "identifer": "10.1126/science.1127344",
+    "standard_citation": "doi:10.1126/science.1127344",
+    "citeproc": {
+      "indexed": {
+        "date-parts": [
+          [
+            2017,
+            8,
+            3
+          ]
+        ],
+        "date-time": "2017-08-03T20:43:28Z",
+        "timestamp": 1501793008877
+      },
+      "reference-count": 0,
+      "publisher": "American Association for the Advancement of Science (AAAS)",
+      "issue": "5793",
+      "content-domain": {
+        "domain": [],
+        "crossmark-restriction": false
+      },
+      "published-print": {
+        "date-parts": [
+          [
+            2006,
+            9,
+            15
+          ]
+        ]
+      },
+      "DOI": "10.1126/science.1127344",
+      "type": "article-journal",
+      "created": {
+        "date-parts": [
+          [
+            2006,
+            8,
+            11
+          ]
+        ],
+        "date-time": "2006-08-11T00:44:58Z",
+        "timestamp": 1155257098000
+      },
+      "page": "1642-1645",
+      "source": "Crossref",
+      "is-referenced-by-count": 3002,
+      "title": "Imaging Intracellular Fluorescent Proteins at Nanometer Resolution",
+      "prefix": "10.1126",
+      "volume": "313",
+      "author": [
+        {
+          "given": "E.",
+          "family": "Betzig",
+          "affiliation": []
+        },
+        {
+          "given": "G. H.",
+          "family": "Patterson",
+          "affiliation": []
+        },
+        {
+          "given": "R.",
+          "family": "Sougrat",
+          "affiliation": []
+        },
+        {
+          "given": "O. W.",
+          "family": "Lindwasser",
+          "affiliation": []
+        },
+        {
+          "given": "S.",
+          "family": "Olenych",
+          "affiliation": []
+        },
+        {
+          "given": "J. S.",
+          "family": "Bonifacino",
+          "affiliation": []
+        },
+        {
+          "given": "M. W.",
+          "family": "Davidson",
+          "affiliation": []
+        },
+        {
+          "given": "J.",
+          "family": "Lippincott-Schwartz",
+          "affiliation": []
+        },
+        {
+          "given": "H. F.",
+          "family": "Hess",
+          "affiliation": []
+        }
+      ],
+      "member": "221",
+      "container-title": "Science",
+      "original-title": [],
+      "deposited": {
+        "date-parts": [
+          [
+            2016,
+            12,
+            23
+          ]
+        ],
+        "date-time": "2016-12-23T12:11:18Z",
+        "timestamp": 1482495078000
+      },
+      "score": 1.0,
+      "subtitle": [],
+      "short-title": [],
+      "issued": {
+        "date-parts": [
+          [
+            2006,
+            9,
+            15
+          ]
+        ]
+      },
+      "references-count": 0,
+      "URL": "https://doi.org/10.1126/science.1127344",
+      "relation": {},
+      "subject": [
+        "Multidisciplinary"
+      ],
+      "container-title-short": "Science",
+      "id": "mNNsAL8U"
+    },
+    "citation_id": "mNNsAL8U"
   }
 }
