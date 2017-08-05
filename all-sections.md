@@ -1,7 +1,7 @@
 ---
 author-meta:
 - David R. Slochower
-date-meta: '2017-08-04'
+date-meta: '2017-08-05'
 keywords:
 - work-in-progress
 - markdown
@@ -12,8 +12,8 @@ title: 'Manubot Rootstock: nonequilibrium-barrier'
 
 <small><em>
 This manuscript was automatically generated
-from [slochower/nonequilibrium-barrier@2f5a20f](https://github.com/slochower/nonequilibrium-barrier/tree/2f5a20f069696b242f8633ec1d76aa47fd97987e)
-on August  4, 2017.
+from [slochower/nonequilibrium-barrier@011fff7](https://github.com/slochower/nonequilibrium-barrier/tree/011fff705ce771789f5871cb6f89620c7d39dfdf)
+on August  5, 2017.
 </em></small>
 
 ## Authors
@@ -54,11 +54,11 @@ position of the barrier.
 
 4. CD can be a platform -- a scaffold -- for building, but it will be hard to figure out the appropriate assays.
 
-## Optimization of a surface for maximum probability flux
+## Optimization of the potential energy surfaces
 
 It would be nice to be able to design -- or suggest -- how to design a molecular motor for specific properties (speed, force, torque, gearing, ability to work against a load, resistance to being forced backwards, or something else). To that end, we set out to explore the relationship between the shape of the potential energy surfaces and these properties. [@mNNsAL8U]
 
-### Optimization of a single surface
+### Optimization of a single surface for maximal flux
 
 ![The fixed bound potential energy surface during optimization.](https://cdn.rawgit.com/slochower/nonequilibrium-master/bcac92c96f496a888dc02249e40d049032225205/notebooks/surface-optimization/fixed-bound-surfaces.svg){#fig:bound width=10cm}
 

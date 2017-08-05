@@ -3,7 +3,7 @@
     "doi": 1,
     "total": 1
   },
-  "date": "August  4, 2017",
+  "date": "August  5, 2017",
   "authors": [
     {
       "github": "slochower",
@@ -17,7 +17,7 @@
   ],
   "ci_source": {
     "repo_slug": "slochower/nonequilibrium-barrier",
-    "commit": "2f5a20f069696b242f8633ec1d76aa47fd97987e"
+    "commit": "011fff705ce771789f5871cb6f89620c7d39dfdf"
   },
-  "word_count": 326
+  "word_count": 327
 }
