@@ -5,7 +5,7 @@
   <meta http-equiv="Content-Style-Type" content="text/css" />
   <meta name="generator" content="pandoc" />
   <meta name="author" content="David R. Slochower" />
-  <meta name="date" content="2017-08-05" />
+  <meta name="date" content="2017-08-06" />
   <meta name="keywords" content="work-in-progress, markdown, manuscript, publishing" />
   <title>Manubot Rootstock: nonequilibrium-barrier</title>
   <style type="text/css">code{white-space: pre;}</style>
@@ -19,7 +19,7 @@
 <div id="header">
 <h1 class="title">Manubot Rootstock: nonequilibrium-barrier</h1>
 </div>
-<p><small><em> This manuscript was automatically generated from <a href="https://github.com/slochower/nonequilibrium-barrier/tree/011fff705ce771789f5871cb6f89620c7d39dfdf">slochower/nonequilibrium-barrier@011fff7</a> on August 5, 2017. </em></small></p>
+<p><small><em> This manuscript was automatically generated from <a href="https://github.com/slochower/nonequilibrium-barrier/tree/355c47e26ab1241d604ee996a27cc105399a3d6c">slochower/nonequilibrium-barrier@355c47e</a> on August 6, 2017. </em></small></p>
 <h2 id="authors">Authors</h2>
 <ul>
 <li><strong>David R. Slochower</strong><br> <img src="images/orcid.svg" alt="ORCID icon" height="13" /> <a href="https://orcid.org/0000-0003-3928-5050">0000-0003-3928-5050</a> · <img src="images/github.svg" alt="GitHub icon" height="13" /> <a href="https://github.com/slochower">slochower</a> · <img src="images/twitter.svg" alt="Twitter icon" height="13" /> <a href="https://twitter.com/drslochower">drslochower</a><br> <small> Skaggs School of Pharmacy and Pharmaceutical Sciences, University of California, San Diego </small></li>
@@ -40,15 +40,17 @@
 <li><p>CD can be a platform – a scaffold – for building, but it will be hard to figure out the appropriate assays.</p></li>
 </ol>
 <h2 id="optimization-of-the-potential-energy-surfaces">Optimization of the potential energy surfaces</h2>
-<p>It would be nice to be able to design – or suggest – how to design a molecular motor for specific properties (speed, force, torque, gearing, ability to work against a load, resistance to being forced backwards, or something else). To that end, we set out to explore the relationship between the shape of the potential energy surfaces and these properties. <span class="citation">[<a href="#ref-mNNsAL8U">1</a>]</span></p>
+<p>It would be nice to be able to design – or suggest how to design – a molecular motor for specific properties (speed, force, torque, gearing, ability to work against a load, resistance to being forced backwards, or something else). To that end, we set out to explore the relationship between the shape of the potential energy surfaces and these properties. <span class="citation">[<a href="#ref-mNNsAL8U">1</a>]</span></p>
 <h3 id="optimization-of-a-single-surface-for-maximal-flux">Optimization of a single surface for maximal flux</h3>
 <div class="figure">
-<img src="https://cdn.rawgit.com/slochower/nonequilibrium-master/bcac92c96f496a888dc02249e40d049032225205/notebooks/surface-optimization/fixed-bound-surfaces.svg" alt="Figure 1: The fixed bound potential energy surface during optimization." id="fig:bound" width="377" />
-<p class="caption">Figure 1: The fixed bound potential energy surface during optimization.</p>
+<img src="https://github.com/slochower/nonequilibrium-master/blob/292d5ab98a15e4dfff6ef56d7dc4b7f13764ae11/notebooks/surface-optimization/bound-presmoothing-surface.svg" alt="Figure 1: The fixed bound potential energy surface, based on a sawtooth wave." id="fig:bound-presmooth" width="377" />
+<p class="caption">Figure 1: The fixed bound potential energy surface, based on a sawtooth wave.</p>
 </div>
-<p>To start, let’s begin with a fixed bound energy surface created by smoothing a sawtooth with six spline points <a href="#fig:bound">1</a>.</p>
-<p>This shows the results of <a href="https://en.wikipedia.org/wiki/Nelder%E2%80%93Mead_method">Nelder-Mead optimization</a>, also known as downhill simplex, which should be completely reproducible and deterministic.</p>
-<p>There is something I still don’t understand about this. The resutls do not seem to be completely reproducable even with setting <code>np.random.seed(42)</code>. I have consistently gotten between 1300 and 1400 iterations, but not always the same number.</p>
+<div class="figure">
+<img src="https://cdn.rawgit.com/slochower/nonequilibrium-master/bcac92c96f496a888dc02249e40d049032225205/notebooks/surface-optimization/fixed-bound-surfaces.svg" alt="Figure 2: The fixed bound potential energy surface after splining." id="fig:bound" width="377" />
+<p class="caption">Figure 2: The fixed bound potential energy surface after splining.</p>
+</div>
+<p>To start, let’s begin with a fixed bound energy surface created by smoothing a sawtooth with seven spline points <a href="#fig:bound">2</a>. I couldn’t find a way to spline across the periodic boundary, so the curve looks a little wonkier than expected. My first attempt was to use a downhill simplex method (<a href="https://en.wikipedia.org/wiki/Nelder%E2%80%93Mead_method">Nelder-Mead optimization</a>) to optimize the two surfaces together for flux. The results are not completely deterministic, even with with setting <code>np.random.seed(42)</code>, and I don’t understand that.</p>
 <h3 id="two-surfaces-both-optimized">Two surfaces, both optimized (?)</h3>
 <h2 id="optimization-of-a-surface-for-maximum-force" class="unnumbered">Optimization of a surface for maximum force</h2>
 <div id="refs" class="references">
