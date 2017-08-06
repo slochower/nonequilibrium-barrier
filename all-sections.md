@@ -12,7 +12,7 @@ title: 'Manubot Rootstock: nonequilibrium-barrier'
 
 <small><em>
 This manuscript was automatically generated
-from [slochower/nonequilibrium-barrier@355c47e](https://github.com/slochower/nonequilibrium-barrier/tree/355c47e26ab1241d604ee996a27cc105399a3d6c)
+from [slochower/nonequilibrium-barrier@6315e76](https://github.com/slochower/nonequilibrium-barrier/tree/6315e76f0d22e4e3f512aa756e0f732415c8fd48)
 on August  6, 2017.
 </em></small>
 
@@ -61,7 +61,7 @@ To that end, we set out to explore the relationship between the shape of the pot
 
 ### Optimization of a single surface for maximal flux
 
-![The fixed bound potential energy surface, based on a sawtooth wave.](https://github.com/slochower/nonequilibrium-master/blob/292d5ab98a15e4dfff6ef56d7dc4b7f13764ae11/notebooks/surface-optimization/bound-presmoothing-surface.svg){#fig:bound-presmooth width=10cm}
+![The fixed bound potential energy surface, based on a sawtooth wave.](https://cdn.rawgit.com/slochower/nonequilibrium-master/292d5ab98a15e4dfff6ef56d7dc4b7f13764ae11/notebooks/surface-optimization/bound-presmoothing-surface.svg){#fig:bound-presmooth width=10cm}
 
 ![The fixed bound potential energy surface after splining.](https://cdn.rawgit.com/slochower/nonequilibrium-master/bcac92c96f496a888dc02249e40d049032225205/notebooks/surface-optimization/fixed-bound-surfaces.svg){#fig:bound width=10cm}
 
