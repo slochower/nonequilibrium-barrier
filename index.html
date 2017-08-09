@@ -19,26 +19,11 @@
 <div id="header">
 <h1 class="title">Manubot Rootstock: nonequilibrium-barrier</h1>
 </div>
-<p><small><em> This manuscript was automatically generated from <a href="https://github.com/slochower/nonequilibrium-barrier/tree/5f2181cc7cf587b7cc3ac170a9488729021866d2">slochower/nonequilibrium-barrier@5f2181c</a> on August 9, 2017. </em></small></p>
+<p><small><em> This manuscript was automatically generated from <a href="https://github.com/slochower/nonequilibrium-barrier/tree/1994fc3307751603c6589bc34cd3c5ed2763bee1">slochower/nonequilibrium-barrier@1994fc3</a> on August 9, 2017. </em></small></p>
 <h2 id="authors">Authors</h2>
 <ul>
 <li><strong>David R. Slochower</strong><br> <img src="images/orcid.svg" alt="ORCID icon" height="13" /> <a href="https://orcid.org/0000-0003-3928-5050">0000-0003-3928-5050</a> · <img src="images/github.svg" alt="GitHub icon" height="13" /> <a href="https://github.com/slochower">slochower</a> · <img src="images/twitter.svg" alt="Twitter icon" height="13" /> <a href="https://twitter.com/drslochower">drslochower</a><br> <small> Skaggs School of Pharmacy and Pharmaceutical Sciences, University of California, San Diego </small></li>
 </ul>
-<h2 id="abstract">Abstract</h2>
-<p>TBD</p>
-<h2 id="outline">Outline</h2>
-<ol style="list-style-type: decimal">
-<li><p>Surface with and without a barrier</p></li>
-<li><p>Family of curves showing force on the barrier as a function of height and position of the barrier.</p></li>
-<li><p>Optimization of a surface for flux and force with and without a barrier.</p></li>
-</ol>
-<h3 id="ideas">Ideas</h3>
-<ol style="list-style-type: decimal">
-<li><p>MD and umbrella sampling of a Feringa-type motor.</p></li>
-<li><p>pH change can be modeled as a change in substrate concentration, for our purposes.</p></li>
-<li><p>Can the experimental groups synthesize motors based on an energy surface?</p></li>
-<li><p>CD can be a platform – a scaffold – for building, but it will be hard to figure out the appropriate assays.</p></li>
-</ol>
 <h2 id="optimization-of-the-potential-energy-surfaces">Optimization of the potential energy surfaces</h2>
 <p>It would be nice to be able to design – or suggest how to design – a molecular motor for specific properties (speed, force, torque, gearing, ability to work against a load, resistance to being forced backwards, or something else). To that end, we set out to explore the relationship between the shape of the potential energy surfaces and these properties. <span class="citation">[<a href="#ref-mNNsAL8U">1</a>]</span></p>
 <h3 id="optimization-of-a-single-surface-for-maximal-flux">Optimization of a single surface for maximal flux</h3>
@@ -63,7 +48,20 @@
 <p>COBYLA and Powell’s method result in better optimization than simplex downhill.</p>
 <h3 id="optimization-of-both-surfaces-for-maximal-flux">Optimization of both surfaces for maximal flux</h3>
 <p>COBYLA in particular handles the bounds and produces highly optimized surfaces after just a few iterations.</p>
-<h2 id="optimization-of-a-surface-for-maximum-force" class="unnumbered">Optimization of a surface for maximum force</h2>
+<h2 id="optimization-of-a-surface-for-maximum-force">Optimization of a surface for maximum force</h2>
+<h2 id="outline">Outline</h2>
+<ol style="list-style-type: decimal">
+<li><p>Surface with and without a barrier</p></li>
+<li><p>Family of curves showing force on the barrier as a function of height and position of the barrier.</p></li>
+<li><p>Optimization of a surface for flux and force with and without a barrier.</p></li>
+</ol>
+<h3 id="ideas">Ideas</h3>
+<ol style="list-style-type: decimal">
+<li><p>MD and umbrella sampling of a Feringa-type motor.</p></li>
+<li><p>pH change can be modeled as a change in substrate concentration, for our purposes.</p></li>
+<li><p>Can the experimental groups synthesize motors based on an energy surface?</p></li>
+<li><p>CD can be a platform – a scaffold – for building, but it will be hard to figure out the appropriate assays.</p></li>
+</ol>
 <div id="refs" class="references">
 <div id="ref-mNNsAL8U">
 <p>1. Betzig E, Patterson GH, Sougrat R, Lindwasser OW, Olenych S, Bonifacino JS, Davidson MW, Lippincott-Schwartz J, Hess HF. 2006 Imaging Intracellular Fluorescent Proteins at Nanometer Resolution. <em>Science</em> <strong>313</strong>, 1642–1645. See <a href="https://doi.org/10.1126/science.1127344" class="uri">https://doi.org/10.1126/science.1127344</a>.</p>
