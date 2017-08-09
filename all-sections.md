@@ -1,7 +1,7 @@
 ---
 author-meta:
 - David R. Slochower
-date-meta: '2017-08-06'
+date-meta: '2017-08-09'
 keywords:
 - work-in-progress
 - markdown
@@ -12,8 +12,8 @@ title: 'Manubot Rootstock: nonequilibrium-barrier'
 
 <small><em>
 This manuscript was automatically generated
-from [slochower/nonequilibrium-barrier@6315e76](https://github.com/slochower/nonequilibrium-barrier/tree/6315e76f0d22e4e3f512aa756e0f732415c8fd48)
-on August  6, 2017.
+from [slochower/nonequilibrium-barrier@5f2181c](https://github.com/slochower/nonequilibrium-barrier/tree/5f2181cc7cf587b7cc3ac170a9488729021866d2)
+on August  9, 2017.
 </em></small>
 
 ## Authors
@@ -61,15 +61,29 @@ To that end, we set out to explore the relationship between the shape of the pot
 
 ### Optimization of a single surface for maximal flux
 
-![The fixed bound potential energy surface, based on a sawtooth wave.](https://cdn.rawgit.com/slochower/nonequilibrium-master/292d5ab98a15e4dfff6ef56d7dc4b7f13764ae11/notebooks/surface-optimization/bound-presmoothing-surface.svg){#fig:bound-presmooth width=10cm}
+![The fixed bound potential energy surface, based on a sawtooth wave. It is a little misleading, but this curve is actually only the seven points in red, drawn on a scale of 60, to show how the seven points map to the interpolated spline below. That is, the bound state is the curve consisting of the points `{(0, 3), (10, 4), (20, 5), (30, 0), (40, 1), (50, 2), (59, 3)}` interpolated to 60 bins using the spline.](https://cdn.rawgit.com/slochower/nonequilibrium-master/292d5ab98a15e4dfff6ef56d7dc4b7f13764ae11/notebooks/surface-optimization/bound-presmoothing-surface.svg){#fig:bound-presmooth width=10cm}
 
 ![The fixed bound potential energy surface after splining.](https://cdn.rawgit.com/slochower/nonequilibrium-master/bcac92c96f496a888dc02249e40d049032225205/notebooks/surface-optimization/fixed-bound-surfaces.svg){#fig:bound width=10cm}
 
-To start, let's begin with a fixed bound energy surface created by smoothing a sawtooth with seven spline points @fig:bound.
+To start, let's begin with a fixed bound energy surface created by smoothing a sawtooth with seven spline points (Figure @fig:bound).
 I couldn't find a way to spline across the periodic boundary, so the curve looks a little wonkier than expected.
 My first attempt was to use a downhill simplex method ([Nelder-Mead optimization](https://en.wikipedia.org/wiki/Nelder%E2%80%93Mead_method)) to optimize the two surfaces together for flux.
 The results are not completely deterministic, even with with setting `np.random.seed(42)`, and I don't understand that.
 
-### Two surfaces, both optimized (?)
+![The result of the optimized apo potential energy surface.](https://cdn.rawgit.com/slochower/nonequilibrium-master/292d5ab98a15e4dfff6ef56d7dc4b7f13764ae11/notebooks/surface-optimization/optimized-apo-surfaces.png){#fig:optimized width=10cm}
+
+After 1403 iterations, Nelder-Mead optimization results in the surface shown in Figure @fig:optimized.
+Each blue line is an interation of the optimization.
+Lighter color correspond to earlier iterations.
+The final surface is darker because many lines are overlayed.
+I have not implemented bounds on the optimization because Nelder-Mead does not allow bounds, as far as I know.
+The result of this optimization is that the flux approaches -0.050 cycle s<sup>-1</sup> quickly and stays there.
+
+![The flux during optimization.](https://cdn.rawgit.com/slochower/nonequilibrium-master/292d5ab98a15e4dfff6ef56d7dc4b7f13764ae11/notebooks/surface-optimization/flux-iterations.png){#fig:optimized-flux width=10cm}
+
+COBYLA and Powell's method result in better optimization than simplex downhill.
+
+### Optimization of both surfaces for maximal flux
+COBYLA in particular handles the bounds and produces highly optimized surfaces after just a few iterations.
 
 ## Optimization of a surface for maximum force
