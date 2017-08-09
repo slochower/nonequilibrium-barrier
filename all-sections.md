@@ -12,7 +12,7 @@ title: 'Manubot Rootstock: nonequilibrium-barrier'
 
 <small><em>
 This manuscript was automatically generated
-from [slochower/nonequilibrium-barrier@5f2181c](https://github.com/slochower/nonequilibrium-barrier/tree/5f2181cc7cf587b7cc3ac170a9488729021866d2)
+from [slochower/nonequilibrium-barrier@1994fc3](https://github.com/slochower/nonequilibrium-barrier/tree/1994fc3307751603c6589bc34cd3c5ed2763bee1)
 on August  9, 2017.
 </em></small>
 
@@ -30,29 +30,6 @@ on August  9, 2017.
      Skaggs School of Pharmacy and Pharmaceutical Sciences, University of California, San Diego
   </small>
 
-
-## Abstract
-
-TBD
-
-## Outline
-
-1. Surface with and without a barrier
-
-2. Family of curves showing force on the barrier as a function of height and
-position of the barrier.
-
-3. Optimization of a surface for flux and force with and without a barrier.
-
-### Ideas
-
-1. MD and umbrella sampling of a Feringa-type motor.
-
-2. pH change can be modeled as a change in substrate concentration, for our purposes.
-
-3. Can the experimental groups synthesize motors based on an energy surface?
-
-4. CD can be a platform -- a scaffold -- for building, but it will be hard to figure out the appropriate assays.
 
 ## Optimization of the potential energy surfaces
 
@@ -87,3 +64,24 @@ COBYLA and Powell's method result in better optimization than simplex downhill.
 COBYLA in particular handles the bounds and produces highly optimized surfaces after just a few iterations.
 
 ## Optimization of a surface for maximum force
+
+
+
+## Outline
+
+1. Surface with and without a barrier
+
+2. Family of curves showing force on the barrier as a function of height and
+position of the barrier.
+
+3. Optimization of a surface for flux and force with and without a barrier.
+
+### Ideas
+
+1. MD and umbrella sampling of a Feringa-type motor.
+
+2. pH change can be modeled as a change in substrate concentration, for our purposes.
+
+3. Can the experimental groups synthesize motors based on an energy surface?
+
+4. CD can be a platform -- a scaffold -- for building, but it will be hard to figure out the appropriate assays.
