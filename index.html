@@ -5,7 +5,7 @@
   <meta http-equiv="Content-Style-Type" content="text/css" />
   <meta name="generator" content="pandoc" />
   <meta name="author" content="David R. Slochower" />
-  <meta name="date" content="2017-08-06" />
+  <meta name="date" content="2017-08-09" />
   <meta name="keywords" content="work-in-progress, markdown, manuscript, publishing" />
   <title>Manubot Rootstock: nonequilibrium-barrier</title>
   <style type="text/css">code{white-space: pre;}</style>
@@ -19,7 +19,7 @@
 <div id="header">
 <h1 class="title">Manubot Rootstock: nonequilibrium-barrier</h1>
 </div>
-<p><small><em> This manuscript was automatically generated from <a href="https://github.com/slochower/nonequilibrium-barrier/tree/6315e76f0d22e4e3f512aa756e0f732415c8fd48">slochower/nonequilibrium-barrier@6315e76</a> on August 6, 2017. </em></small></p>
+<p><small><em> This manuscript was automatically generated from <a href="https://github.com/slochower/nonequilibrium-barrier/tree/5f2181cc7cf587b7cc3ac170a9488729021866d2">slochower/nonequilibrium-barrier@5f2181c</a> on August 9, 2017. </em></small></p>
 <h2 id="authors">Authors</h2>
 <ul>
 <li><strong>David R. Slochower</strong><br> <img src="images/orcid.svg" alt="ORCID icon" height="13" /> <a href="https://orcid.org/0000-0003-3928-5050">0000-0003-3928-5050</a> · <img src="images/github.svg" alt="GitHub icon" height="13" /> <a href="https://github.com/slochower">slochower</a> · <img src="images/twitter.svg" alt="Twitter icon" height="13" /> <a href="https://twitter.com/drslochower">drslochower</a><br> <small> Skaggs School of Pharmacy and Pharmaceutical Sciences, University of California, San Diego </small></li>
@@ -43,15 +43,26 @@
 <p>It would be nice to be able to design – or suggest how to design – a molecular motor for specific properties (speed, force, torque, gearing, ability to work against a load, resistance to being forced backwards, or something else). To that end, we set out to explore the relationship between the shape of the potential energy surfaces and these properties. <span class="citation">[<a href="#ref-mNNsAL8U">1</a>]</span></p>
 <h3 id="optimization-of-a-single-surface-for-maximal-flux">Optimization of a single surface for maximal flux</h3>
 <div class="figure">
-<img src="https://cdn.rawgit.com/slochower/nonequilibrium-master/292d5ab98a15e4dfff6ef56d7dc4b7f13764ae11/notebooks/surface-optimization/bound-presmoothing-surface.svg" alt="Figure 1: The fixed bound potential energy surface, based on a sawtooth wave." id="fig:bound-presmooth" width="377" />
-<p class="caption">Figure 1: The fixed bound potential energy surface, based on a sawtooth wave.</p>
+<img src="https://cdn.rawgit.com/slochower/nonequilibrium-master/292d5ab98a15e4dfff6ef56d7dc4b7f13764ae11/notebooks/surface-optimization/bound-presmoothing-surface.svg" alt="Figure 1: The fixed bound potential energy surface, based on a sawtooth wave. It is a little misleading, but this curve is actually only the seven points in red, drawn on a scale of 60, to show how the seven points map to the interpolated spline below. That is, the bound state is the curve consisting of the points {(0, 3), (10, 4), (20, 5), (30, 0), (40, 1), (50, 2), (59, 3)} interpolated to 60 bins using the spline." id="fig:bound-presmooth" width="377" />
+<p class="caption">Figure 1: The fixed bound potential energy surface, based on a sawtooth wave. It is a little misleading, but this curve is actually only the seven points in red, drawn on a scale of 60, to show how the seven points map to the interpolated spline below. That is, the bound state is the curve consisting of the points <code>{(0, 3), (10, 4), (20, 5), (30, 0), (40, 1), (50, 2), (59, 3)}</code> interpolated to 60 bins using the spline.</p>
 </div>
 <div class="figure">
 <img src="https://cdn.rawgit.com/slochower/nonequilibrium-master/bcac92c96f496a888dc02249e40d049032225205/notebooks/surface-optimization/fixed-bound-surfaces.svg" alt="Figure 2: The fixed bound potential energy surface after splining." id="fig:bound" width="377" />
 <p class="caption">Figure 2: The fixed bound potential energy surface after splining.</p>
 </div>
-<p>To start, let’s begin with a fixed bound energy surface created by smoothing a sawtooth with seven spline points <a href="#fig:bound">2</a>. I couldn’t find a way to spline across the periodic boundary, so the curve looks a little wonkier than expected. My first attempt was to use a downhill simplex method (<a href="https://en.wikipedia.org/wiki/Nelder%E2%80%93Mead_method">Nelder-Mead optimization</a>) to optimize the two surfaces together for flux. The results are not completely deterministic, even with with setting <code>np.random.seed(42)</code>, and I don’t understand that.</p>
-<h3 id="two-surfaces-both-optimized">Two surfaces, both optimized (?)</h3>
+<p>To start, let’s begin with a fixed bound energy surface created by smoothing a sawtooth with seven spline points (Figure <a href="#fig:bound">2</a>). I couldn’t find a way to spline across the periodic boundary, so the curve looks a little wonkier than expected. My first attempt was to use a downhill simplex method (<a href="https://en.wikipedia.org/wiki/Nelder%E2%80%93Mead_method">Nelder-Mead optimization</a>) to optimize the two surfaces together for flux. The results are not completely deterministic, even with with setting <code>np.random.seed(42)</code>, and I don’t understand that.</p>
+<div class="figure">
+<img src="https://cdn.rawgit.com/slochower/nonequilibrium-master/292d5ab98a15e4dfff6ef56d7dc4b7f13764ae11/notebooks/surface-optimization/optimized-apo-surfaces.png" alt="Figure 3: The result of the optimized apo potential energy surface." id="fig:optimized" width="377" />
+<p class="caption">Figure 3: The result of the optimized apo potential energy surface.</p>
+</div>
+<p>After 1403 iterations, Nelder-Mead optimization results in the surface shown in Figure <a href="#fig:optimized">3</a>. Each blue line is an interation of the optimization. Lighter color correspond to earlier iterations. The final surface is darker because many lines are overlayed. I have not implemented bounds on the optimization because Nelder-Mead does not allow bounds, as far as I know. The result of this optimization is that the flux approaches -0.050 cycle s<sup>-1</sup> quickly and stays there.</p>
+<div class="figure">
+<img src="https://cdn.rawgit.com/slochower/nonequilibrium-master/292d5ab98a15e4dfff6ef56d7dc4b7f13764ae11/notebooks/surface-optimization/flux-iterations.png" alt="Figure 4: The flux during optimization." id="fig:optimized-flux" width="377" />
+<p class="caption">Figure 4: The flux during optimization.</p>
+</div>
+<p>COBYLA and Powell’s method result in better optimization than simplex downhill.</p>
+<h3 id="optimization-of-both-surfaces-for-maximal-flux">Optimization of both surfaces for maximal flux</h3>
+<p>COBYLA in particular handles the bounds and produces highly optimized surfaces after just a few iterations.</p>
 <h2 id="optimization-of-a-surface-for-maximum-force" class="unnumbered">Optimization of a surface for maximum force</h2>
 <div id="refs" class="references">
 <div id="ref-mNNsAL8U">
