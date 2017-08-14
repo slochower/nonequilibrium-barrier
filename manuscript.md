@@ -12,7 +12,7 @@ title: 'Nonequilibrium molecular motors: optimization and torque'
 
 <small><em>
 This manuscript was automatically generated
-from [slochower/nonequilibrium-barrier@e773d49](https://github.com/slochower/nonequilibrium-barrier/tree/e773d49645aec7257a705e3c6497fc79ad09cc4c)
+from [slochower/nonequilibrium-barrier@3e6b0cd](https://github.com/slochower/nonequilibrium-barrier/tree/3e6b0cd01cfa347c6cf3fcdca844bb9f2502790f)
 on August 14, 2017.
 </em></small>
 
@@ -41,7 +41,7 @@ Each blue line is an interation of the optimization.
 Lighter color correspond to earlier iterations.
 The final surface is darker because many lines are overlayed.
 I have not implemented bounds on the optimization because Nelder-Mead does not allow bounds, as far as I know.
-The result of this optimization is that the flux approaches $-0.050 \text{cycle s}^{-1}$ quickly and stays there.
+The result of this optimization is that the flux approaches $-0.050 \,\text{cycle s}^{-1}$ quickly and stays there.
 
 ![The flux during optimization.](https://cdn.rawgit.com/slochower/nonequilibrium-master/292d5ab98a15e4dfff6ef56d7dc4b7f13764ae11/notebooks/surface-optimization/flux-iterations.png){#fig:optimized-flux width=10cm}
 
