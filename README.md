@@ -15,4 +15,4 @@ This directory contains the following files, which are mostly ignored on the `ma
 ## Source
 
 The manuscripts in this directory were built from
-[`a38dd56f74eeb5114e45f98cc734e4a1fa028db3`](https://github.com/slochower/nonequilibrium-barrier/commit/a38dd56f74eeb5114e45f98cc734e4a1fa028db3).
+[`e773d49645aec7257a705e3c6497fc79ad09cc4c`](https://github.com/slochower/nonequilibrium-barrier/commit/e773d49645aec7257a705e3c6497fc79ad09cc4c).
