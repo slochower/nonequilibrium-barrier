@@ -1,7 +1,7 @@
 ---
 author-meta:
 - David R. Slochower
-date-meta: '2017-08-14'
+date-meta: '2017-08-18'
 keywords:
 - work-in-progress
 - markdown
@@ -12,15 +12,15 @@ title: 'Nonequilibrium molecular motors: optimization and torque'
 
 <small><em>
 This manuscript was automatically generated
-from [slochower/nonequilibrium-barrier@3e6b0cd](https://github.com/slochower/nonequilibrium-barrier/tree/3e6b0cd01cfa347c6cf3fcdca844bb9f2502790f)
-on August 14, 2017.
+from [slochower/nonequilibrium-barrier@1a526f7](https://github.com/slochower/nonequilibrium-barrier/tree/1a526f71d7cb172c84ca2fee2246fc42cc1fde47)
+on August 18, 2017.
 </em></small>
 
 
 
 ## Optimization of the potential energy surfaces
 
-It would be nice to be able to design -- or suggest how to design -- a molecular motor for specific properties (speed, force, torque, gearing, ability to work against a load, resistance to being forced backwards, or something else).
+It would be nice to be able to design -- or suggest how to design -- a molecular motor for specific properties: speed, force, torque, gearing, ability to work against a load, resistance to being forced backwards, or something else.
 To that end, we set out to explore the relationship between the shape of the potential energy surfaces and these properties.
 
 ### Optimization of a single surface for maximal flux
@@ -31,21 +31,37 @@ To that end, we set out to explore the relationship between the shape of the pot
 
 To start, let's begin with a fixed bound energy surface created by smoothing a sawtooth with seven spline points (Figure @fig:bound).
 I couldn't find a way to spline across the periodic boundary, so the curve looks a little wonkier than expected.
-My first attempt was to use a downhill simplex method ([Nelder-Mead optimization](https://en.wikipedia.org/wiki/Nelder%E2%80%93Mead_method)) to optimize the two surfaces together for flux.
+My first attempt was to use a downhill simplex method ([Nelder-Mead](https://en.wikipedia.org/wiki/Nelder%E2%80%93Mead_method)) to optimize the apo surface for maximal flux.
+The algorithm begins with an initial guess of a flat apo surface.
 The results are not completely deterministic, even with with setting `np.random.seed(42)`, and I don't understand that.
+After 100 loops of the same optimization, using the same initial conditions and random seed, the number of function evaluations in each optimization bounces between around 1400 and around 500!
+I could look into this further, but I haven't.
+It may have to do with the interpolation.
+
+![In my hands, the Nelder-Mead optimization is not completely deterministic.](https://cdn.rawgit.com/slochower/nonequilibrium-master/d346ae563e1c9b584b87695cc431defd14530f5a/notebooks/surface-optimization/nelder-mead-evaluations.svg){#fig:nelder-mead width=10cm}
 
 ![The result of the optimized apo potential energy surface.](https://cdn.rawgit.com/slochower/nonequilibrium-master/292d5ab98a15e4dfff6ef56d7dc4b7f13764ae11/notebooks/surface-optimization/optimized-apo-surfaces.png){#fig:optimized width=10cm}
 
 After 1403 iterations, Nelder-Mead optimization results in the surface shown in Figure @fig:optimized.
-Each blue line is an interation of the optimization.
-Lighter color correspond to earlier iterations.
-The final surface is darker because many lines are overlayed.
+Each blue line is an iteration of the optimization.
+Lighter colors correspond to earlier iterations.
+The final surface is darker because many lines are overlaid.
 I have not implemented bounds on the optimization because Nelder-Mead does not allow bounds, as far as I know.
-The result of this optimization is that the flux approaches $-0.050 \,\text{cycle s}^{-1}$ quickly and stays there.
+I'll return to the idea of using bounds a little later.
+The result of this optimization is that the flux starts near $0$ (although not exactly at zero, curiously) and drops to $-0.050 \,\text{cycle s}^{-1}$ quickly and stays there.
 
 ![The flux during optimization.](https://cdn.rawgit.com/slochower/nonequilibrium-master/292d5ab98a15e4dfff6ef56d7dc4b7f13764ae11/notebooks/surface-optimization/flux-iterations.png){#fig:optimized-flux width=10cm}
 
 COBYLA and Powell's method result in better optimization than simplex downhill.
+After 269 iterations, COBYLA approaches flux of more than $-250 \,\text{cycle s}^{-1}$, with the flux beginning to decrease after just a few iterations.
+The iterations of COBYLA look like they are refining a single landscape, instead of jumping around.
+Powell's method does well, too, although it occasionally jumps back to near zero flux after finding a high value.
+
+Taken together, the fixed bound surface and the COBYLA-optimized apo surface are shown below.
+
+![The COBYLA-optimized energy surfaces.](https://cdn.rawgit.com/slochower/nonequilibrium-master/01269a9f99c5d5858c1b903fb72b34c390c5f3b0/notebooks/surface-optimization/COBYLA-optimized-surfaces.png){#fig:cobyla-optimized-surfaces width=10cm}
+![The COBYLA-optimized energy surfaces.](https://cdn.rawgit.com/slochower/nonequilibrium-master/01269a9f99c5d5858c1b903fb72b34c390c5f3b0/notebooks/surface-optimization/COBYLA-optimized-flux.png){#fig:cobyla-optimized-flux width=10cm}
+
 
 ### Optimization of both surfaces for maximal flux
 COBYLA in particular handles the bounds and produces highly optimized surfaces after just a few iterations.
