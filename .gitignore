@@ -17,3 +17,5 @@ __pycache__/
 # Misc temporary files
 *.bak
 
+# VScode
+.vscode
