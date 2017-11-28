@@ -12,7 +12,7 @@ title: 'Nonequilibrium molecular motors: optimization and torque'
 
 <small><em>
 This manuscript was automatically generated
-from [slochower/nonequilibrium-barrier@f932658](https://github.com/slochower/nonequilibrium-barrier/tree/f932658344021c067c6f5a94b3084375e681e5aa)
+from [slochower/nonequilibrium-barrier@9244179](https://github.com/slochower/nonequilibrium-barrier/tree/9244179633f35b61bd0c69cfddcc0698ce17ed12)
 on November 28, 2017.
 </em></small>
 
