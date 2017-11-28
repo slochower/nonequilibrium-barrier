@@ -1,7 +1,7 @@
 ---
 author-meta:
 - David R. Slochower
-date-meta: '2017-08-18'
+date-meta: '2017-11-28'
 keywords:
 - work-in-progress
 - markdown
@@ -12,8 +12,8 @@ title: 'Nonequilibrium molecular motors: optimization and torque'
 
 <small><em>
 This manuscript was automatically generated
-from [slochower/nonequilibrium-barrier@1a526f7](https://github.com/slochower/nonequilibrium-barrier/tree/1a526f71d7cb172c84ca2fee2246fc42cc1fde47)
-on August 18, 2017.
+from [slochower/nonequilibrium-barrier@f932658](https://github.com/slochower/nonequilibrium-barrier/tree/f932658344021c067c6f5a94b3084375e681e5aa)
+on November 28, 2017.
 </em></small>
 
 
