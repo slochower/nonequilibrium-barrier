@@ -28,15 +28,9 @@ echo "Exporting HTML manuscript"
 pandoc --verbose \
   --from=markdown \
   --to=html5 \
-<<<<<<< HEAD
-  --filter pandoc-fignos \
-  --filter pandoc-eqnos \
-  --filter pandoc-tablenos \
-=======
   --filter=pandoc-fignos \
   --filter=pandoc-eqnos \
   --filter=pandoc-tablenos \
->>>>>>> rootstock/master
   --bibliography=$BIBLIOGRAPHY_PATH \
   --csl=$CSL_PATH \
   --metadata link-citations=true \
