@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 # nonequilibrium-barrier
-=======
-# Automated scholarly manuscripts on GitHub
->>>>>>> rootstock/master
 
 <!-- usage note: edit the H1 title above to personalize the manuscript -->
 
@@ -17,15 +13,13 @@
 This repository is a template manuscript (a.k.a. rootstock).
 Actual manuscript instances will clone this repository (see [`SETUP.md`](SETUP.md)) and replace this paragraph with a description of their manuscript.
 
-<<<<<<< HEAD
 The most current version of the `master` branch is built by continuous integration and [available via gh-pages](https://slochower.github.io/nonequilibrium-barrier/).
 To see what's incoming, check the [open pull requests](https://github.com/slochower/nonequilibrium-barrier/pulls).
 
 Instructions for using Manubot Rootstock for your own manuscript are still evolving.
 The recommended approach is to clone this repository, as detailed [here](https://github.com/greenelab/manubot-rootstock/issues/6#issuecomment-314541837).
-=======
+
 ## Manubot
->>>>>>> rootstock/master
 
 <!-- usage note: do not edit this section -->
 
@@ -87,13 +81,8 @@ Whenever a pull request is opened, Travis CI will test whether the changes break
 The build process aims to detect common errors, such as invalid citations.
 If your pull request build fails, see the Travis CI logs for the cause of failure and revise your pull request accordingly.
 
-<<<<<<< HEAD
 When a pull request is merged, Travis CI performs the build and writes the results to the [`gh-pages`](https://github.com/slochower/nonequilibrium-barrier/tree/gh-pages) and [`output`](https://github.com/slochower/nonequilibrium-barrier/tree/output branches.
 The `gh-pages` branch hosts the following URLs:
-=======
-When a commit to the `master` branch occurs (for example, when a pull request is merged), Travis CI builds the manuscript and writes the results to the [`gh-pages`](https://github.com/greenelab/manubot-rootstock/tree/gh-pages) and [`output`](https://github.com/greenelab/manubot-rootstock/tree/output) branches.
-The `gh-pages` branch uses [GitHub Pages](https://pages.github.com/) to host the following URLs:
->>>>>>> rootstock/master
 
 + **HTML manuscript** at https://slochower.github.io/nonequilibrium-barrier/<br>
   short URL: TBD
@@ -112,13 +101,8 @@ We encourage users to openly license their manuscripts, which is the default as 
 [![License: CC BY 4.0](https://img.shields.io/badge/License%20All-CC%20BY%204.0-lightgrey.svg)](http://creativecommons.org/licenses/by/4.0/)
 [![License: CC0 1.0](https://img.shields.io/badge/License%20Parts-CC0%201.0-lightgrey.svg)](https://creativecommons.org/publicdomain/zero/1.0/)
 
-<<<<<<< HEAD
-This entirety of this repository is licensed under a CC BY 4.0 License ([`LICENSE.md`](LICENSE.md)), which allows reuse with attribution.
-Please attribute by linking to https://github.com/slochower/nonequilibrium-barrier.
-=======
 Except when noted otherwise, the entirety of this repository is licensed under a CC BY 4.0 License ([`LICENSE.md`](LICENSE.md)), which allows reuse with attribution.
 Please attribute by linking to https://github.com/greenelab/manubot-rootstock.
->>>>>>> rootstock/master
 
 Since CC BY is not ideal for code and data, certain repository components are also released under the CC0 1.0 public domain dedication ([`LICENSE-CC0.md`](LICENSE-CC0.md)).
 All files matched by the following glob patterns are dual licensed under CC BY 4.0 and CC0 1.0:
@@ -138,12 +122,7 @@ All other files are only available under CC BY 4.0, including:
 + `*.pdf`
 + `*.docx`
 
-<<<<<<< HEAD
-Please open [an issue](https://github.com/slochower/nonequilibrium-barrier/issues) for any question related to licensing.
-=======
-Except for the following files with different licenses:
 
 + `build/assets/anchors.js` which is [released](https://www.bryanbraun.com/anchorjs/) under an [MIT License](https://opensource.org/licenses/MIT)
 
 Please open [an issue](https://github.com/greenelab/manubot-rootstock/issues) for any question related to licensing.
->>>>>>> rootstock/master
