@@ -1,5 +1,5 @@
 {
-  "date": "November 28, 2017",
+  "date": "May 8, 2018",
   "authors": [
     {
       "github": "slochower",
@@ -8,17 +8,31 @@
       "orcid": "0000-0003-3928-5050",
       "twitter": "drslochower",
       "email": "slochower@gmail.com",
-      "affiliations": "Skaggs School of Pharmacy and Pharmaceutical Sciences, University of California, San Diego"
+      "affiliations": [
+        "Skaggs School of Pharmacy and Pharmaceutical Sciences, University of California, San Diego"
+      ],
+      "affiliation_numbers": [
+        1
+      ]
+    }
+  ],
+  "affiliations": [
+    {
+      "affiliation": "Skaggs School of Pharmacy and Pharmaceutical Sciences, University of California, San Diego",
+      "affiliation_number": 1
     }
   ],
   "ci_source": {
     "repo_slug": "slochower/nonequilibrium-barrier",
-    "commit": "9244179633f35b61bd0c69cfddcc0698ce17ed12"
+    "repo_owner": "slochower",
+    "repo_name": "nonequilibrium-barrier",
+    "commit": "29ba41b278c5744c41efa4d1084ee24b6ab44937"
   },
   "manuscript_stats": {
     "reference_counts": {
-      "total": 0
+      "doi": 2,
+      "total": 2
     },
-    "word_count": 690
+    "word_count": 1975
   }
 }

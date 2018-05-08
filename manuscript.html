@@ -1,15 +1,21 @@
 <!DOCTYPE html>
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US">
 <head>
-  <meta charset="utf-8">
-  <meta name="generator" content="pandoc">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-  <meta name="author" content="David R. Slochower">
-  <meta name="dcterms.date" content="2017-11-28">
-  <meta name="keywords" content="work-in-progress, markdown, manuscript, publishing">
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="author" content="David R. Slochower" />
+  <meta name="dcterms.date" content="2018-05-08" />
+  <meta name="keywords" content="markdown, publishing, manubot" />
   <title>Nonequilibrium molecular motors: optimization and torque</title>
-  <style type="text/css">code{white-space: pre;}</style>
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
   <link rel="stylesheet" href="github-pandoc.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_CHTML-full" type="text/javascript"></script>
   <!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
   <![endif]-->
@@ -22,35 +28,76 @@
 <header>
 <h1 class="title">Nonequilibrium molecular motors: optimization and torque</h1>
 </header>
-<p><small><em> This manuscript was automatically generated from <a href="https://github.com/slochower/nonequilibrium-barrier/tree/9244179633f35b61bd0c69cfddcc0698ce17ed12">slochower/nonequilibrium-barrier@9244179</a> on November 28, 2017. </em></small></p>
+<p><small><em> This manuscript (<a href="https://slochower.github.io/nonequilibrium-barrier/v/29ba41b278c5744c41efa4d1084ee24b6ab44937/">permalink</a>) was automatically generated from <a href="https://github.com/slochower/nonequilibrium-barrier/tree/29ba41b278c5744c41efa4d1084ee24b6ab44937">slochower/nonequilibrium-barrier@29ba41b</a> on May 8, 2018. </em></small></p>
+<h2 id="authors">Authors</h2>
+<ul>
+<li><strong>David R. Slochower</strong><br> <img src="images/orcid.svg" alt="ORCID icon" width="13" height="13" /> <a href="https://orcid.org/0000-0003-3928-5050">0000-0003-3928-5050</a> · <img src="images/github.svg" alt="GitHub icon" width="13" height="13" /> <a href="https://github.com/slochower">slochower</a> · <img src="images/twitter.svg" alt="Twitter icon" width="13" height="13" /> <a href="https://twitter.com/drslochower">drslochower</a><br> <small> Skaggs School of Pharmacy and Pharmaceutical Sciences, University of California, San Diego </small></li>
+</ul>
+<h2 id="abstract" class="page_break_before">Abstract</h2>
+<h2 id="manubot-rootstock-information">Manubot Rootstock Information</h2>
+<p><strong>Note: Manubot instances should delete this file.</strong></p>
+<p>The Manubot is a system for automating scholarly publishing. Content is written in <a href="http://pandoc.org/MANUAL.html#pandocs-markdown">Pandoc Markdown</a> source files. See <a href="https://github.com/greenelab/manubot-rootstock/blob/master/USAGE.md"><code>USAGE.md</code></a> for more information on how to use the Manubot.</p>
+<p>The Manubot project began with the <a href="https://github.com/greenelab/deep-review">Deep Review</a>, where it was used to compose a highly-collaborative review article <span class="citation" data-cites="tJKvnIaZ">[<a href="#ref-tJKvnIaZ">1</a>]</span>. Other manuscripts that were created with Manubot include:</p>
+<ul>
+<li>The Sci-Hub Coverage Study (<a href="https://github.com/greenelab/scihub-manuscript">GitHub</a>, <a href="https://greenelab.github.io/scihub-manuscript/">HTML manuscript</a>)</li>
+<li>Michael Zietz’s Report for the Vagelos Scholars Program (<a href="https://github.com/zietzm/Vagelos2017">GitHub</a>, <a href="https://zietzm.github.io/Vagelos2017/">HTML manuscript</a>) <span class="citation" data-cites="15nwuvjrA">[<a href="#ref-15nwuvjrA">2</a>]</span></li>
+</ul>
+<p>If you notice a problem with Manubot, it’s best to submit an upstream fix to the appropriate repository: <a href="https://github.com/greenelab/manubot-rootstock"><code>greenelab/manubot-rootstock</code></a> for the git repository stub or <a href="https://github.com/greenelab/manubot"><code>greenelab/manubot</code></a> for the Python package.</p>
 <h2 id="optimization-of-the-potential-energy-surfaces">Optimization of the potential energy surfaces</h2>
 <p>It would be nice to be able to design – or suggest how to design – a molecular motor for specific properties: speed, force, torque, gearing, ability to work against a load, resistance to being forced backwards, or something else. To that end, we set out to explore the relationship between the shape of the potential energy surfaces and these properties.</p>
 <h3 id="optimization-of-a-single-surface-for-maximal-flux">Optimization of a single surface for maximal flux</h3>
 <figure>
-<img src="https://cdn.rawgit.com/slochower/nonequilibrium-master/292d5ab98a15e4dfff6ef56d7dc4b7f13764ae11/notebooks/surface-optimization/bound-presmoothing-surface.svg" alt="Figure 1: The fixed bound potential energy surface, based on a sawtooth wave. It is a little misleading, but this curve is actually only the seven points in red, drawn on a scale of 60, to show how the seven points map to the interpolated spline below. That is, the bound state is the curve consisting of the points {(0, 3), (10, 4), (20, 5), (30, 0), (40, 1), (50, 2), (59, 3)} interpolated to 60 bins using the spline." id="fig:bound-presmooth" width="377" /><figcaption>Figure 1: The fixed bound potential energy surface, based on a sawtooth wave. It is a little misleading, but this curve is actually only the seven points in red, drawn on a scale of 60, to show how the seven points map to the interpolated spline below. That is, the bound state is the curve consisting of the points <code>{(0, 3), (10, 4), (20, 5), (30, 0), (40, 1), (50, 2), (59, 3)}</code> interpolated to 60 bins using the spline.</figcaption>
+<img src="https://cdn.rawgit.com/slochower/nonequilibrium-master/292d5ab98a15e4dfff6ef56d7dc4b7f13764ae11/notebooks/surface-optimization/bound-presmoothing-surface.svg" alt="Figure 1: The fixed bound potential energy surface, based on a sawtooth wave. It is a little misleading, but this curve is actually only the seven points in red, drawn on a scale of 60, to show how the seven points map to the interpolated spline below. That is, the bound state is the curve consisting of the points {(0, 3), (10, 4), (20, 5), (30, 0), (40, 1), (50, 2), (59, 3)} interpolated to 60 bins using the spline." id="fig:bound-presmooth" style="width:10cm" /><figcaption><span>Figure 1:</span> The fixed bound potential energy surface, based on a sawtooth wave. It is a little misleading, but this curve is actually only the seven points in red, drawn on a scale of 60, to show how the seven points map to the interpolated spline below. That is, the bound state is the curve consisting of the points <code>{(0, 3), (10, 4), (20, 5), (30, 0), (40, 1), (50, 2), (59, 3)}</code> interpolated to 60 bins using the spline.</figcaption>
 </figure>
 <figure>
-<img src="https://cdn.rawgit.com/slochower/nonequilibrium-master/bcac92c96f496a888dc02249e40d049032225205/notebooks/surface-optimization/fixed-bound-surfaces.svg" alt="Figure 2: The fixed bound potential energy surface after splining." id="fig:bound" width="377" /><figcaption>Figure 2: The fixed bound potential energy surface after splining.</figcaption>
+<img src="https://cdn.rawgit.com/slochower/nonequilibrium-master/bcac92c96f496a888dc02249e40d049032225205/notebooks/surface-optimization/fixed-bound-surfaces.svg" alt="Figure 2: The fixed bound potential energy surface after splining." id="fig:bound" style="width:10cm" /><figcaption><span>Figure 2:</span> The fixed bound potential energy surface after splining.</figcaption>
 </figure>
-<p>To start, let’s begin with a fixed bound energy surface created by smoothing a sawtooth with seven spline points (Figure <a href="#fig:bound">2</a>). I couldn’t find a way to spline across the periodic boundary, so the curve looks a little wonkier than expected. My first attempt was to use a downhill simplex method (<a href="https://en.wikipedia.org/wiki/Nelder%E2%80%93Mead_method">Nelder-Mead</a>) to optimize the apo surface for maximal flux. The algorithm begins with an initial guess of a flat apo surface. The results are not completely deterministic, even with with setting <code>np.random.seed(42)</code>, and I don’t understand that. After 100 loops of the same optimization, using the same initial conditions and random seed, the number of function evaluations in each optimization bounces between around 1400 and around 500! I could look into this further, but I haven’t. It may have to do with the interpolation.</p>
+<p>To start, let’s begin with a fixed bound energy surface created by smoothing a sawtooth with seven spline points (Figure <a href="#fig:bound">2</a>). I couldn’t find a way to spline across the periodic boundary, so the curve looks a little wonkier than expected. My first attempt was to use a downhill simplex method (<a href="https://en.wikipedia.org/wiki/Nelder%E2%80%93Mead_method">Nelder-Mead</a>) to optimize the apo surface for maximal flux. The algorithm begins with an initial guess of a flat apo surface. The results are not completely deterministic, even with with setting <code>np.random.seed(42)</code>, and I don’t understand that. After 100 loops of the same optimization, using the same initial conditions and random seed, the number of function evaluations in each optimization bounces between around 1400 and around 500! The non-repeatability of the optimization is repeatable itself, however! Upon running a further 100 loops on a different day, I observed the same bouncing between 1400 and 500 iterations. I could look into this further, but I haven’t. It may have to do with the interpolation.</p>
 <figure>
-<img src="https://cdn.rawgit.com/slochower/nonequilibrium-master/d346ae563e1c9b584b87695cc431defd14530f5a/notebooks/surface-optimization/nelder-mead-evaluations.svg" alt="Figure 3: In my hands, the Nelder-Mead optimization is not completely deterministic." id="fig:nelder-mead" width="377" /><figcaption>Figure 3: In my hands, the Nelder-Mead optimization is not completely deterministic.</figcaption>
+<img src="https://cdn.rawgit.com/slochower/nonequilibrium-master/d346ae563e1c9b584b87695cc431defd14530f5a/notebooks/surface-optimization/nelder-mead-evaluations.svg" alt="Figure 3: In my hands, the Nelder-Mead optimization is not completely deterministic." id="fig:nelder-mead" style="width:10cm" /><figcaption><span>Figure 3:</span> In my hands, the Nelder-Mead optimization is not completely deterministic.</figcaption>
 </figure>
 <figure>
-<img src="https://cdn.rawgit.com/slochower/nonequilibrium-master/292d5ab98a15e4dfff6ef56d7dc4b7f13764ae11/notebooks/surface-optimization/optimized-apo-surfaces.png" alt="Figure 4: The result of the optimized apo potential energy surface." id="fig:optimized" width="377" /><figcaption>Figure 4: The result of the optimized apo potential energy surface.</figcaption>
+<img src="https://cdn.rawgit.com/slochower/nonequilibrium-master/b5c42b4efcc295635d96989d00462ed18f253e89/notebooks/surface-optimization/nelder-mead-evaluations.svg" alt="Figure 4: Predictably, non-deterministic." id="fig:nelder-mead-2" style="width:10cm" /><figcaption><span>Figure 4:</span> Predictably, non-deterministic.</figcaption>
 </figure>
-<p>After 1403 iterations, Nelder-Mead optimization results in the surface shown in Figure <a href="#fig:optimized">4</a>. Each blue line is an iteration of the optimization. Lighter colors correspond to earlier iterations. The final surface is darker because many lines are overlaid. I have not implemented bounds on the optimization because Nelder-Mead does not allow bounds, as far as I know. I’ll return to the idea of using bounds a little later. The result of this optimization is that the flux starts near <span class="math inline">0</span> (although not exactly at zero, curiously) and drops to <span class="math inline">−0.050 cycle s<sup>−1</sup></span> quickly and stays there.</p>
 <figure>
-<img src="https://cdn.rawgit.com/slochower/nonequilibrium-master/292d5ab98a15e4dfff6ef56d7dc4b7f13764ae11/notebooks/surface-optimization/flux-iterations.png" alt="Figure 5: The flux during optimization." id="fig:optimized-flux" width="377" /><figcaption>Figure 5: The flux during optimization.</figcaption>
+<img src="https://cdn.rawgit.com/slochower/nonequilibrium-master/292d5ab98a15e4dfff6ef56d7dc4b7f13764ae11/notebooks/surface-optimization/optimized-apo-surfaces.png" alt="Figure 5: The result of the optimized apo potential energy surface." id="fig:optimized" style="width:10cm" /><figcaption><span>Figure 5:</span> The result of the optimized apo potential energy surface.</figcaption>
 </figure>
-<p>COBYLA and Powell’s method result in better optimization than simplex downhill. After 269 iterations, COBYLA approaches flux of more than <span class="math inline">−250 cycle s<sup>−1</sup></span>, with the flux beginning to decrease after just a few iterations. The iterations of COBYLA look like they are refining a single landscape, instead of jumping around. Powell’s method does well, too, although it occasionally jumps back to near zero flux after finding a high value.</p>
+<p>After 1403 iterations, Nelder-Mead optimization results in the surface shown in Figure <a href="#fig:optimized">5</a>. Each blue line is an iteration of the optimization. Lighter colors correspond to earlier iterations. The final surface is darker because many lines are overlaid. I have not implemented bounds on the optimization because Nelder-Mead does not allow bounds, as far as I know. I’ll return to the idea of using bounds a little later. The result of this optimization is that the flux starts near <span class="math inline">\(0\)</span> (although not exactly at zero, curiously) and drops to <span class="math inline">\(-0.050 \,\text{cycle s}^{-1}\)</span> quickly and stays there.</p>
+<figure>
+<img src="https://cdn.rawgit.com/slochower/nonequilibrium-master/292d5ab98a15e4dfff6ef56d7dc4b7f13764ae11/notebooks/surface-optimization/flux-iterations.png" alt="Figure 6: The flux during optimization." id="fig:optimized-flux" style="width:10cm" /><figcaption><span>Figure 6:</span> The flux during optimization.</figcaption>
+</figure>
+<p>COBYLA and Powell’s method result in better optimization than simplex downhill. After 269 iterations, COBYLA approaches flux of more than <span class="math inline">\(-250 \,\text{cycle s}^{-1}\)</span>, with the flux beginning to decrease after just a few iterations. The iterations of COBYLA look like they are refining a single landscape, instead of jumping around. Powell’s method does well, too, although it occasionally jumps back to near zero flux after finding a high value.</p>
 <p>Taken together, the fixed bound surface and the COBYLA-optimized apo surface are shown below.</p>
-<p><img src="https://cdn.rawgit.com/slochower/nonequilibrium-master/01269a9f99c5d5858c1b903fb72b34c390c5f3b0/notebooks/surface-optimization/COBYLA-optimized-surfaces.png" alt="The COBYLA-optimized energy surfaces." id="fig:cobyla-optimized-surfaces" width="377" /> <img src="https://cdn.rawgit.com/slochower/nonequilibrium-master/01269a9f99c5d5858c1b903fb72b34c390c5f3b0/notebooks/surface-optimization/COBYLA-optimized-flux.png" alt="The COBYLA-optimized energy surfaces." id="fig:cobyla-optimized-flux" width="377" /></p>
+<figure>
+<img src="https://cdn.rawgit.com/slochower/nonequilibrium-master/01269a9f99c5d5858c1b903fb72b34c390c5f3b0/notebooks/surface-optimization/COBYLA-optimized-surfaces.png" alt="Figure 7: The COBYLA-optimized energy surfaces." id="fig:cobyla-optimized-surfaces" style="width:10cm" /><figcaption><span>Figure 7:</span> The COBYLA-optimized energy surfaces.</figcaption>
+</figure>
+<figure>
+<img src="https://cdn.rawgit.com/slochower/nonequilibrium-master/01269a9f99c5d5858c1b903fb72b34c390c5f3b0/notebooks/surface-optimization/COBYLA-optimized-flux.png" alt="Figure 8: The COBYLA-optimized energy surfaces." id="fig:cobyla-optimized-flux" style="width:10cm" /><figcaption><span>Figure 8:</span> The COBYLA-optimized energy surfaces.</figcaption>
+</figure>
+<p>Curiously, the flux is mostly zero across the</p>
 <h3 id="optimization-of-both-surfaces-for-maximal-flux">Optimization of both surfaces for maximal flux</h3>
 <p>COBYLA in particular handles the bounds and produces highly optimized surfaces after just a few iterations.</p>
 <h2 id="optimization-of-a-surface-for-maximum-force">Optimization of a surface for maximum force</h2>
 <h2 id="the-force-on-a-barrier">The force on a barrier</h2>
-<p>It is interesting that in most places <span class="math inline"><em>F</em> = 0</span>.</p>
+<p>It is interesting that in most places <span class="math inline">\(F = 0\)</span>.</p>
+<h2 id="earlier-outline-sat-feb-17-171400-2018--0800-72608ff-in-motor-thoughts">Earlier outline (Sat Feb 17 17:14:00 2018 -0800 <code>#72608ff</code> in <code>motor-thoughts</code></h2>
+<p>Title: Phase-Dependent Stall Forces in Brownian Motors [Or maybe a catchier title based on analogies with 4-stroke engines and cyclists, see below]</p>
+<p>Introduction Molecular motors are thought to work as Brownian ratchets, so Brownian ratchets are interesting. Key performance characteristics of motors are: maximum speed (e.g., linear velocity for a walker, cycles per second for a rotary motor). For a probabilistic Brownian motor, we think of this is a probability flux maximum force, or stall force. maximum power output to a load One may expect maximum speed to be attained in the absence of any external load, so solving a model for this parameter would seem fairly straightforward. Stall force is typically obtained by imposing a linear energy gradient along the motor’s coordinate of motion (e.g. x for a linear motor, phi for a rotary one). This corresponds to a constant force along the coordinate. One increases the force until the flux goes to zero, and then reads out the stall force. The force exerted by a macroscopic motor may depend on the phase of its working cycle. For example, the torque output of one cylinder of a 4-stroke engine varies enormously with rotation phase, and is in fact directed opposite to the direction of motion during most of the cycle (if I am reading this right: http://www.epi-eng.com/piston_engine_technology/torsional_excitation_from_piston_engines.htm). Similarly, the torque a cyclist exerts on the crankset is high when the crank arm is horizontal, but zero when arm is vertical. Thus, the stall force of a macroscopic motor can, in general, depend on the phase of its operating cycle. This has functional relevance: a four-cycle engine needs multiple cylinders to generating continuous forward torque (I think); and cyclists may stall when climbing a hill if their speed gets so low that they don’t have enough momentum for the crank arm to go through the zero-torque vertical orientation. It is thus interesting to consider how the stall force exerted by a Brownian motor depends on the phase of its cycle. We examine this issue here, for a simple Brownian rotary motor model, by computing the torques exerted on high barriers which bring the flux to zero. We find that the stall torque depends strongly on phase. We also find that low barriers not large enough to bring the flux to zero can have complex effects on the motor’s operating cycle, and may even cause the direction of the flux to reverse.<br />
+Methods Theory of forces on barriers Motor model and solving the model</p>
+<p>Results I think we can look at just 1-3 different potential functions. Maybe even just a rounded sawtooth. I don’t think we need to crank through loads of cases from our MD runs. Graphs of torque as a function of phase and barrier height (as you have already made). Observations of torque crossing through zero at some places (major energy minima, I think). Analogy with cylinder of 4-stroke engine. Empirical relationship between conventional stall force results and barrier stall force results. (It would be nice if we could relate these, but there may not be a clean relationship to find.)</p>
+<p>Discussion We hypothesize, based on these results, that molecular motors also will have phase-dependent forces or torques. The pattern of these may also be informative regarding mechanisms (maybe we can flesh out ideas like this). May be challenging to measure, as probably need the motor’s linkage to the force sensor to be quite rigid, in the sense of having fluctuations that are small in relation to the motor’s cycle. Maybe comment that, just as a 4-stroke engine needs multiple cylinders out of phase on a camshaft to generate smooth motion (any net motion), due to phase dependence of torque, so perhaps the F1 ATPas has multiple equivalent active sites that together drive the shaft. Also may speculate that imposing low barriers on some motors could lead to reversal of direction. (However, I suspect that evolved motors, at least, are probably robust against this.)</p>
+<p>===================</p>
+<p>Questions/issues to examine</p>
+<ol type="1">
+<li><p>Relationship between conventional stall force results and barrier stall force results. (It would be nice if we could relate these, but there may not be a clean relationship to find.)</p></li>
+<li>Should we test our “pressure” method of computing the force with a numerical example? I think the way to do this would be to set up a motor model with a very large number of bins (e.g. 1000), and</li>
+<li><p>Our motor models so far assume a catalytic rate constant that is uniform in phi. I wonder how the present results would change if we focused kcat&gt;0 in some key part of the cycle. Could we get rid of the zero-torque locations? I don’t think this would happen, but it may be worth considering for the paper, since I think biomolecular motors do have a phase-dependent kcat.</p></li>
+<li><p>Due diligence again: can our results and ideas really be new? I’ve made another scan of literature on line, and haven’t found them, but it seems unexpected that such a seemingly basic issue would not have been addressed.</p></li>
+</ol>
+<h2 id="tentative-title-force-generation-by-brownian-ratchets-or-molecular-motors">Tentative title: Force generation by Brownian Ratchets (or: molecular motors)</h2>
+<p>We are interested in optimizing the performance of molecular motors.</p>
+<p>It would be nice to be able to design – or suggest how to design – a molecular motor for specific properties: speed, force, torque, gearing, ability to work against a load, resistance to being forced backwards, or something else. To that end, we set out to explore the relationship between the shape of the potential energy surfaces and these properties.</p>
+<p>We address these issues by showing how to determine the force exerted by a Brownian motor on a localized barrier. We then explore the consequences of this formulation by looking at how the barrier force varies as a function of the barrier height and of its location (or phase), and by using this approach to efficiently derive energy surfaces optimized for force generation.</p>
 <h2 id="outline">Outline</h2>
 <ol type="1">
 <li><p>Surface with and without a barrier</p></li>
@@ -58,12 +105,20 @@
 <li><p>Optimization of a surface for flux and force with and without a barrier.</p></li>
 </ol>
 <h3 id="ideas">Ideas</h3>
-<ol type="1">
-<li><p>MD and umbrella sampling of a Feringa-type motor.</p></li>
-<li><p>pH change can be modeled as a change in substrate concentration, for our purposes.</p></li>
-<li><p>Can the experimental groups synthesize motors based on an energy surface?</p></li>
-<li><p>CD can be a platform – a scaffold – for building, but it will be hard to figure out the appropriate assays.</p></li>
-</ol>
+<h2 id="references" class="page_break_before">References</h2>
+<!-- Explicitly insert bibliography here -->
+<div id="refs">
+<div id="ref-tJKvnIaZ">
+<p>1. <strong>Opportunities And Obstacles For Deep Learning In Biology And Medicine</strong><br />
+Travers Ching, Daniel S. Himmelstein, Brett K. Beaulieu-Jones, Alexandr A. Kalinin, Brian T. Do, Gregory P. Way, Enrico Ferrero, Paul-Michael Agapow, Michael Zietz, Michael M Hoffman, … Casey S. Greene<br />
+<em>Cold Spring Harbor Laboratory</em> (2017-05-28) <a href="https://doi.org/10.1101/142760" class="uri">https://doi.org/10.1101/142760</a></p>
+</div>
+<div id="ref-15nwuvjrA">
+<p>2. <strong>Vagelos Report Summer 2017</strong><br />
+Michael Zietz<br />
+<em>Figshare</em> (2017) <a href="https://doi.org/10.6084/m9.figshare.5346577" class="uri">https://doi.org/10.6084/m9.figshare.5346577</a></p>
+</div>
+</div>
 <script>
 // AnchorJS minified version below.
 // Source https://github.com/bryanbraun/anchorjs/blob/064abdd0987f305933ec4982af6d0c1cf2fd0814/anchor.js
@@ -79,5 +134,7 @@
 var anchors = new AnchorJS();
 anchors.add("h2, h3, h4")
 </script>
+<!-- Enable Hypothesis annotation. https://web.hypothes.is/ -->
+<script src="https://hypothes.is/embed.js" async></script>
 </body>
 </html>
