@@ -1,7 +1,7 @@
 # Output directory containing the formatted manuscript
 
 The [`gh-pages`](https://github.com/slochower/nonequilibrium-barrier/tree/gh-pages) branch hosts the contents of this directory at https://slochower.github.io/nonequilibrium-barrier/.
-The permalink for this webpage version is https://slochower.github.io/nonequilibrium-barrier/v/29ba41b278c5744c41efa4d1084ee24b6ab44937/.
+The permalink for this webpage version is https://slochower.github.io/nonequilibrium-barrier/v/bc66f53d5d037c4eb2758085e5645a889f61dd64/.
 To redirect to the permalink for the latest manuscript version at anytime, use the link https://slochower.github.io/nonequilibrium-barrier/v/freeze/.
 
 ## Files
@@ -32,4 +32,4 @@ git add v/*/*.ots
 ## Source
 
 The manuscripts in this directory were built from
-[`29ba41b278c5744c41efa4d1084ee24b6ab44937`](https://github.com/slochower/nonequilibrium-barrier/commit/29ba41b278c5744c41efa4d1084ee24b6ab44937).
+[`bc66f53d5d037c4eb2758085e5645a889f61dd64`](https://github.com/slochower/nonequilibrium-barrier/commit/bc66f53d5d037c4eb2758085e5645a889f61dd64).
