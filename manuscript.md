@@ -17,9 +17,9 @@ title: 'Nonequilibrium molecular motors: optimization and torque'
 
 <small><em>
 This manuscript
-([permalink](https://slochower.github.io/nonequilibrium-barrier/v/bc66f53d5d037c4eb2758085e5645a889f61dd64/))
+([permalink](https://slochower.github.io/nonequilibrium-barrier/v/58c601e7df11cb27486dc7af8264d57acb491457/))
 was automatically generated
-from [slochower/nonequilibrium-barrier@bc66f53](https://github.com/slochower/nonequilibrium-barrier/tree/bc66f53d5d037c4eb2758085e5645a889f61dd64)
+from [slochower/nonequilibrium-barrier@58c601e](https://github.com/slochower/nonequilibrium-barrier/tree/58c601e7df11cb27486dc7af8264d57acb491457)
 on May 8, 2018.
 </em></small>
 
@@ -43,24 +43,6 @@ on May 8, 2018.
 ## Abstract {.page_break_before}
 
 
-
-
-## Manubot Rootstock Information
-
-**Note: Manubot instances should delete this file.**
-
-The Manubot is a system for automating scholarly publishing.
-Content is written in [Pandoc Markdown](http://pandoc.org/MANUAL.html#pandocs-markdown) source files.
-See [`USAGE.md`](https://github.com/greenelab/manubot-rootstock/blob/master/USAGE.md) for more information on how to use the Manubot.
-
-The Manubot project began with the [Deep Review](https://github.com/greenelab/deep-review), where it was used to compose a highly-collaborative review article [@tJKvnIaZ].
-Other manuscripts that were created with Manubot include:
-
-+ The Sci-Hub Coverage Study ([GitHub](https://github.com/greenelab/scihub-manuscript), [HTML manuscript](https://greenelab.github.io/scihub-manuscript/))
-+ Michael Zietz's Report for the Vagelos Scholars Program ([GitHub](https://github.com/zietzm/Vagelos2017), [HTML manuscript](https://zietzm.github.io/Vagelos2017/)) [@15nwuvjrA]
-
-If you notice a problem with Manubot, it's best to submit an upstream fix to the appropriate repository:
-[`greenelab/manubot-rootstock`](https://github.com/greenelab/manubot-rootstock) for the git repository stub or [`greenelab/manubot`](https://github.com/greenelab/manubot) for the Python package.
 
 
 ## Optimization of the potential energy surfaces

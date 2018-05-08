@@ -26,13 +26,12 @@
     "repo_slug": "slochower/nonequilibrium-barrier",
     "repo_owner": "slochower",
     "repo_name": "nonequilibrium-barrier",
-    "commit": "bc66f53d5d037c4eb2758085e5645a889f61dd64"
+    "commit": "58c601e7df11cb27486dc7af8264d57acb491457"
   },
   "manuscript_stats": {
     "reference_counts": {
-      "doi": 2,
-      "total": 2
+      "total": 0
     },
-    "word_count": 1975
+    "word_count": 1858
   }
 }
