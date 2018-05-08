@@ -1,12 +1,13 @@
 ---
 title: "Nonequilibrium molecular motors: optimization and torque"
 keywords:
-  - work-in-progress
   - markdown
-  - manuscript
   - publishing
+  - manubot
+lang: en-US
 author_info:
   -
+<<<<<<< HEAD
     github: slochower
     name: David R. Slochower
     initials: DRS

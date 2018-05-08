@@ -26,49 +26,65 @@ mkdir -p output
 # http://pandoc.org/MANUAL.html
 echo "Exporting HTML manuscript"
 pandoc --verbose \
-  --smart \
   --from=markdown \
   --to=html5 \
+<<<<<<< HEAD
   --filter pandoc-fignos \
   --filter pandoc-eqnos \
   --filter pandoc-tablenos \
+=======
+  --filter=pandoc-fignos \
+  --filter=pandoc-eqnos \
+  --filter=pandoc-tablenos \
+>>>>>>> rootstock/master
   --bibliography=$BIBLIOGRAPHY_PATH \
   --csl=$CSL_PATH \
   --metadata link-citations=true \
+  --mathjax \
   --css=github-pandoc.css \
-  --include-in-header=build/assets/analytics.js \
-  --include-after-body=build/assets/anchors.js \
+  --include-in-header=build/assets/analytics.html \
+  --include-after-body=build/assets/anchors.html \
+  --include-after-body=build/assets/hypothesis.html \
   --output=output/manuscript.html \
   $INPUT_PATH
 
 # Create PDF output
 echo "Exporting PDF manuscript"
-wkhtmltopdf \
-  --quiet \
-  --print-media-type \
-  --margin-top 21 \
-  --margin-bottom 17 \
-  --margin-left 0 \
-  --margin-right 0 \
-  webpage/index.html \
-  output/manuscript.pdf
+ln -s content/images images
+pandoc \
+  --from=markdown \
+  --to=html5 \
+  --pdf-engine=weasyprint \
+  --pdf-engine-opt=--presentational-hints \
+  --filter=pandoc-fignos \
+  --filter=pandoc-eqnos \
+  --filter=pandoc-tablenos \
+  --bibliography=$BIBLIOGRAPHY_PATH \
+  --csl=$CSL_PATH \
+  --metadata link-citations=true \
+  --webtex=https://latex.codecogs.com/svg.latex? \
+  --css=webpage/github-pandoc.css \
+  --output=output/manuscript.pdf \
+  $INPUT_PATH
+rm -r images
 
 # Create DOCX output when user specifies to do so
 if [ "$BUILD_DOCX" = "true" ];
 then
     echo "Exporting Word Docx manuscript"
-    ln --symbolic content/images images
     pandoc --verbose \
-    --smart \
     --from=markdown \
     --to=docx \
-    --filter pandoc-fignos \
-    --filter pandoc-tablenos \
+    --filter=pandoc-fignos \
+    --filter=pandoc-eqnos \
+    --filter=pandoc-tablenos \
     --bibliography=$BIBLIOGRAPHY_PATH \
-    --metadata link-citations=true \
     --csl=$CSL_PATH \
-    --reference-docx=$DOCX_PATH \
+    --metadata link-citations=true \
+    --reference-doc=$DOCX_PATH \
+    --resource-path=.:content \
     --output=output/manuscript.docx \
     $INPUT_PATH
-    rm --recursive images
 fi
+
+echo "Build complete"
