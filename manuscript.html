@@ -28,24 +28,25 @@
 <header>
 <h1 class="title">Nonequilibrium molecular motors: optimization and torque</h1>
 </header>
-<p><small><em> This manuscript (<a href="https://slochower.github.io/nonequilibrium-barrier/v/8fc960eaddc340b05f6c339f6ceb23f70ded33f4/">permalink</a>) was automatically generated from <a href="https://github.com/slochower/nonequilibrium-barrier/tree/8fc960eaddc340b05f6c339f6ceb23f70ded33f4">slochower/nonequilibrium-barrier@8fc960e</a> on May 9, 2018. </em></small></p>
-<h2 id="outline">Outline</h2>
-<p>Tentative title: Force generation by Brownian Ratchets (or: molecular motors)</p>
+<p><small><em> This manuscript (<a href="https://slochower.github.io/nonequilibrium-barrier/v/2d24517fefa59576e8bcc1453b5b16cae6887d74/">permalink</a>) was automatically generated from <a href="https://github.com/slochower/nonequilibrium-barrier/tree/2d24517fefa59576e8bcc1453b5b16cae6887d74">slochower/nonequilibrium-barrier@2d24517</a> on May 9, 2018. </em></small></p>
+<h2 id="overview">Overview</h2>
+<h3 id="titles">Titles</h3>
+<ul>
+<li>Force generation by Brownian ratchets</li>
+<li>Force generation by molecular motors</li>
+<li>Phase-dependent stall forces in Brownian motors</li>
+</ul>
+<h3 id="questions">Questions</h3>
 <ol type="1">
-<li><p>Surface with and without a barrier</p></li>
-<li><p>Family of curves showing force on the barrier as a function of height and position of the barrier.</p></li>
-<li><p>Optimization of a surface for flux and force with and without a barrier.</p></li>
-</ol>
-<h2 id="questions">Questions</h2>
-<ol type="1">
-<li><p>Relationship between conventional stall force results and barrier stall force results. (It would be nice if we could relate these, but there may not be a clean relationship to find.)</p></li>
-<li>Should we test our “pressure” method of computing the force with a numerical example? I think the way to do this would be to set up a motor model with a very large number of bins (e.g. 1000), and</li>
-<li><p>Our motor models so far assume a catalytic rate constant that is uniform in phi. I wonder how the present results would change if we focused kcat&gt;0 in some key part of the cycle. Could we get rid of the zero-torque locations? I don’t think this would happen, but it may be worth considering for the paper, since I think biomolecular motors do have a phase-dependent kcat.</p></li>
-<li><p>Due diligence again: can our results and ideas really be new? I’ve made another scan of literature on line, and haven’t found them, but it seems unexpected that such a seemingly basic issue would not have been addressed.</p></li>
+<li><p>What is the relationshiop between the “conventional” stall force results and the forces on infinitely high barriers? It would be nice if we could find a concrete relationship, but I’m not convinced one exists.</p></li>
+<li><p>Should we test our “pressure” method of computing the force with a numerical example? I think the way to do this would be to set up a motor model with a very large number of bins (e.g. 1000).</p></li>
+<li><p>Our motor models so far assume a catalytic rate constant that is uniform in <span class="math inline">\(\phi\)</span>. How would the present results change if <span class="math inline">\(k_\text{cat} &gt; 0\)</span> were focused in some key part of the cycle? Would this get rid of zero-torque locations?</p></li>
 </ol>
 <h2 id="introduction">Introduction</h2>
-<p>We are interested in optimizing the performance of molecular motors.</p>
 <p>It would be nice to be able to design – or suggest how to design – a molecular motor for specific properties: speed, force, torque, gearing, ability to work against a load, resistance to being forced backwards, or something else. To that end, we set out to explore the relationship between the shape of the potential energy surfaces and these properties.</p>
+<ul>
+<li>Molecular motors work against active loads.</li>
+</ul>
 <p>We address these issues by showing how to determine the force exerted by a Brownian motor on a localized barrier. We then explore the consequences of this formulation by looking at how the barrier force varies as a function of the barrier height and of its location (or phase), and by using this approach to efficiently derive energy surfaces optimized for force generation.</p>
 <p>Molecular motors are thought to work as Brownian ratchets, so Brownian ratchets are interesting. Key performance characteristics of motors are: maximum speed (e.g., linear velocity for a walker, cycles per second for a rotary motor). For a probabilistic Brownian motor, we think of this is a probability flux maximum force, or stall force. maximum power output to a load One may expect maximum speed to be attained in the absence of any external load, so solving a model for this parameter would seem fairly straightforward. Stall force is typically obtained by imposing a linear energy gradient along the motor’s coordinate of motion (e.g. x for a linear motor, phi for a rotary one). This corresponds to a constant force along the coordinate. One increases the force until the flux goes to zero, and then reads out the stall force. The force exerted by a macroscopic motor may depend on the phase of its working cycle. For example, the torque output of one cylinder of a 4-stroke engine varies enormously with rotation phase, and is in fact directed opposite to the direction of motion during most of the cycle (if I am reading this right: http://www.epi-eng.com/piston_engine_technology/torsional_excitation_from_piston_engines.htm). Similarly, the torque a cyclist exerts on the crankset is high when the crank arm is horizontal, but zero when arm is vertical. Thus, the stall force of a macroscopic motor can, in general, depend on the phase of its operating cycle. This has functional relevance: a four-cycle engine needs multiple cylinders to generating continuous forward torque (I think); and cyclists may stall when climbing a hill if their speed gets so low that they don’t have enough momentum for the crank arm to go through the zero-torque vertical orientation. It is thus interesting to consider how the stall force exerted by a Brownian motor depends on the phase of its cycle. We examine this issue here, for a simple Brownian rotary motor model, by computing the torques exerted on high barriers which bring the flux to zero. We find that the stall torque depends strongly on phase. We also find that low barriers not large enough to bring the flux to zero can have complex effects on the motor’s operating cycle, and may even cause the direction of the flux to reverse.</p>
 <h2 id="the-force-on-a-barrier">The force on a barrier</h2>

@@ -17,41 +17,35 @@ title: 'Nonequilibrium molecular motors: optimization and torque'
 
 <small><em>
 This manuscript
-([permalink](https://slochower.github.io/nonequilibrium-barrier/v/8fc960eaddc340b05f6c339f6ceb23f70ded33f4/))
+([permalink](https://slochower.github.io/nonequilibrium-barrier/v/2d24517fefa59576e8bcc1453b5b16cae6887d74/))
 was automatically generated
-from [slochower/nonequilibrium-barrier@8fc960e](https://github.com/slochower/nonequilibrium-barrier/tree/8fc960eaddc340b05f6c339f6ceb23f70ded33f4)
+from [slochower/nonequilibrium-barrier@2d24517](https://github.com/slochower/nonequilibrium-barrier/tree/2d24517fefa59576e8bcc1453b5b16cae6887d74)
 on May 9, 2018.
 </em></small>
 
-## Outline
+## Overview
 
-Tentative title: Force generation by Brownian Ratchets (or: molecular motors)
+### Titles
+- Force generation by Brownian ratchets
+- Force generation by molecular motors
+- Phase-dependent stall forces in Brownian motors 
 
+### Questions
 
-1. Surface with and without a barrier
+1. What is the relationshiop between the "conventional" stall force results and the forces on infinitely high barriers? It would be nice if we could find a concrete relationship, but I'm not convinced one exists.
 
-2. Family of curves showing force on the barrier as a function of height and position of the barrier.
+2. Should we test our "pressure" method of computing the force with a numerical example? I think the way to do this would be to set up a motor model with a very large number of bins (e.g. 1000). 
 
-3. Optimization of a surface for flux and force with and without a barrier.
-
-## Questions
-
-1) Relationship between conventional stall force results and barrier stall force results. (It would be nice if we could relate these, but there may not be a clean relationship to find.)
-
-2) Should we test our "pressure" method of computing the force with a numerical example? I think the way to do this would be to set up a motor model with a very large number of bins (e.g. 1000), and 
-3) Our motor models so far assume a catalytic rate constant that is uniform in phi. I wonder how the present results would change if we focused kcat>0 in some key part of the cycle. Could we get rid of the zero-torque locations? I don't think this would happen, but it may be worth considering for the paper, since I think biomolecular motors do have a phase-dependent kcat.
-
-4) Due diligence again: can our results and ideas really be new? I've made another scan of literature on line, and haven't found them, but it seems unexpected that such a seemingly basic issue would not have been addressed.
-
+3. Our motor models so far assume a catalytic rate constant that is uniform in $\phi$. How would the present results change if $k_\text{cat} > 0$ were focused in some key part of the cycle? Would this get rid of zero-torque locations?
 
 
 
 ## Introduction
 
-We are interested in optimizing the performance of molecular motors.
-
 It would be nice to be able to design -- or suggest how to design -- a molecular motor for specific properties: speed, force, torque, gearing, ability to work against a load, resistance to being forced backwards, or something else.
 To that end, we set out to explore the relationship between the shape of the potential energy surfaces and these properties.
+
+- Molecular motors work against active loads.
 
 We address these issues by showing how to determine the force exerted by a Brownian motor on a localized barrier. 
 We then explore the consequences of this formulation by looking at how the barrier force varies as a function of the barrier height and of its location (or phase), and by using this approach to efficiently derive energy surfaces optimized for force generation.
