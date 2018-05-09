@@ -1,5 +1,5 @@
 {
-  "date": "May 8, 2018",
+  "date": "May 9, 2018",
   "authors": [
     {
       "github": "slochower",
@@ -26,12 +26,12 @@
     "repo_slug": "slochower/nonequilibrium-barrier",
     "repo_owner": "slochower",
     "repo_name": "nonequilibrium-barrier",
-    "commit": "58c601e7df11cb27486dc7af8264d57acb491457"
+    "commit": "8fc960eaddc340b05f6c339f6ceb23f70ded33f4"
   },
   "manuscript_stats": {
     "reference_counts": {
       "total": 0
     },
-    "word_count": 1858
+    "word_count": 2591
   }
 }
