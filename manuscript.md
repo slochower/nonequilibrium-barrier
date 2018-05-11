@@ -1,7 +1,7 @@
 ---
 author-meta:
 - David R. Slochower
-date-meta: '2018-05-10'
+date-meta: '2018-05-11'
 keywords:
 - markdown
 - publishing
@@ -17,10 +17,10 @@ title: 'Nonequilibrium molecular motors: optimization and torque'
 
 <small><em>
 This manuscript
-([permalink](https://slochower.github.io/nonequilibrium-barrier/v/afcdce6a615c2cc7c7b5a5f936ffa52a7a0d0f7e/))
+([permalink](https://slochower.github.io/nonequilibrium-barrier/v/d905240bcf8ffbda6967ea555b64f9d4ba595e63/))
 was automatically generated
-from [slochower/nonequilibrium-barrier@afcdce6](https://github.com/slochower/nonequilibrium-barrier/tree/afcdce6a615c2cc7c7b5a5f936ffa52a7a0d0f7e)
-on May 10, 2018.
+from [slochower/nonequilibrium-barrier@d905240](https://github.com/slochower/nonequilibrium-barrier/tree/d905240bcf8ffbda6967ea555b64f9d4ba595e63)
+on May 11, 2018.
 </em></small>
 
 ## Outline
@@ -115,7 +115,7 @@ $$ {#eq:force}
 
 
 ## Discussion
-
+- The asymmetry-directionality conjecture shows there will always be *some* flux.
 - We hypothesize, based on these results, that molecular motors also will have phase-dependent forces or torques. The pattern of these may also be informative regarding mechanisms (maybe we can flesh out ideas like this). May be challenging to measure, as probably need the motor's linkage to the force sensor to be quite rigid, in the sense of having fluctuations that are small in relation to the motor's cycle. Maybe comment that, just as a 4-stroke engine needs multiple cylinders out of phase on a camshaft to generate smooth motion (any net motion), due to phase dependence of torque, so perhaps the F1 ATPas has multiple equivalent active sites that together drive the shaft. 
 - Also may speculate that imposing low barriers on some motors could lead to reversal of direction. (However, I suspect that evolved motors, at least, are probably robust against this.)
 
